@@ -1,0 +1,469 @@
+#!/usr/bin/env python3
+"""Trovi AI site builder — light theme. Regenerates index + all placeholder pages."""
+import os
+SITE = os.path.dirname(os.path.abspath(__file__))
+
+CARET = '<svg class="caret" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+LOGO = ('<a class="logo" href="{ROOT}index.html"><svg class="logo-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">'
+        '<circle cx="12" cy="12" r="6.6" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.1" fill="currentColor"/>'
+        '<path d="M12 1.8v3.4M12 18.8v3.4M1.8 12h3.4M18.8 12h3.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>'
+        '</svg><span class="logo-word">Trovi&nbsp;<b>AI</b></span></a>')
+
+NAV = ('''
+<header class="nav-wrap"><nav class="nav" aria-label="Main">''' + LOGO + '''
+  <ul class="nav-menu">
+    <li class="has-dd"><button class="nav-link" type="button">Platform __C__</button>
+      <div class="dd">
+        <a href="{ROOT}platform/agent-studio.html">Agent Studio</a>
+        <a href="{ROOT}platform/technology.html">Technology</a>
+        <a href="{ROOT}platform/integrations.html">Integrations</a>
+        <a href="{ROOT}platform/security-compliance.html">Security &amp; compliance</a>
+        <a href="{ROOT}platform/analytics-insights.html">Analytics &amp; insights</a>
+        <a href="{ROOT}platform/languages.html">Languages</a>
+      </div></li>
+    <li class="has-dd"><button class="nav-link" type="button">Solutions __C__</button>
+      <div class="dd dd-2col">
+        <div><h5>Industries</h5>
+          <a href="{ROOT}solutions/barbershops.html">Barbershops</a>
+          <a href="{ROOT}solutions/auto-repair.html">Healthcare &amp; med spas</a>
+          <a href="{ROOT}solutions/tax-accounting.html">Tax &amp; accounting</a></div>
+        <div><h5>Use cases</h5>
+          <a href="{ROOT}solutions/bookings-appointments.html">Bookings &amp; appointments</a>
+          <a href="{ROOT}solutions/faq-answering.html">FAQ answering</a>
+          <a href="{ROOT}solutions/call-routing.html">Call routing</a>
+          <a href="{ROOT}solutions/no-show-recovery.html">No-show recovery</a></div>
+      </div></li>
+    <li><a class="nav-link" href="{ROOT}developers.html">Developers</a></li>
+    <li class="has-dd"><button class="nav-link" type="button">Customers __C__</button>
+      <div class="dd">
+        <a href="{ROOT}customers/customer-stories.html">Customer stories</a>
+        <a href="{ROOT}customers/partners-ecosystem.html">Partners &amp; ecosystem</a>
+      </div></li>
+    <li class="has-dd"><button class="nav-link" type="button">Resources __C__</button>
+      <div class="dd dd-2col">
+        <div><h5>Resources</h5>
+          <a href="{ROOT}resources/blog.html">Blog</a>
+          <a href="{ROOT}resources/guides.html">Guides</a>
+          <a href="{ROOT}resources/call-recordings.html">Call recordings</a></div>
+        <div><h5>Company</h5>
+          <a href="{ROOT}resources/about.html">About us</a>
+          <a href="{ROOT}resources/careers.html">Careers</a>
+          <a href="{ROOT}resources/contact.html">Contact us</a></div>
+      </div></li>
+    <li><a class="nav-link" href="{ROOT}pricing.html">Pricing</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a class="btn btn--line btn--sm" href="{ROOT}index.html#demos">Hear a demo</a>
+    <a class="btn btn--accent btn--sm" href="{ROOT}resources/contact.html">Book a call <span class="cta-arrow">→</span></a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+</nav></header>
+<div class="m-nav" id="mnav">
+  <h5>Platform</h5>
+  <a href="{ROOT}platform/agent-studio.html">Agent Studio</a>
+  <a href="{ROOT}platform/technology.html">Technology</a>
+  <a href="{ROOT}platform/integrations.html">Integrations</a>
+  <a href="{ROOT}platform/security-compliance.html">Security &amp; compliance</a>
+  <a href="{ROOT}platform/analytics-insights.html">Analytics &amp; insights</a>
+  <a href="{ROOT}platform/languages.html">Languages</a>
+  <h5>Solutions</h5>
+  <a href="{ROOT}solutions/barbershops.html">Barbershops</a>
+  <a href="{ROOT}solutions/auto-repair.html">Healthcare &amp; med spas</a>
+  <a href="{ROOT}solutions/tax-accounting.html">Tax &amp; accounting</a>
+  <a href="{ROOT}solutions/bookings-appointments.html">Bookings &amp; appointments</a>
+  <a href="{ROOT}solutions/faq-answering.html">FAQ answering</a>
+  <a href="{ROOT}solutions/call-routing.html">Call routing</a>
+  <a href="{ROOT}solutions/no-show-recovery.html">No-show recovery</a>
+  <h5>More</h5>
+  <a href="{ROOT}developers.html">Developers</a>
+  <a href="{ROOT}customers/customer-stories.html">Customer stories</a>
+  <a href="{ROOT}customers/partners-ecosystem.html">Partners &amp; ecosystem</a>
+  <a href="{ROOT}resources/blog.html">Blog</a>
+  <a href="{ROOT}resources/guides.html">Guides</a>
+  <a href="{ROOT}resources/call-recordings.html">Call recordings</a>
+  <a href="{ROOT}resources/about.html">About us</a>
+  <a href="{ROOT}resources/contact.html">Contact us</a>
+  <a href="{ROOT}pricing.html">Pricing</a>
+  <div class="m-ctas">
+    <a class="btn btn--line" href="{ROOT}index.html#demos">Hear a demo</a>
+    <a class="btn btn--accent" href="{ROOT}resources/contact.html">Book a call <span class="cta-arrow">→</span></a>
+  </div>
+</div>
+''').replace("__C__", CARET)
+
+FOOTER = '''
+<footer><div class="wrap">
+  <div class="f-grid">
+    <div class="f-brand">''' + LOGO + '''
+      <p>The receptionist for local business. Built in Toronto. Answering somewhere right now.</p>
+      <div class="f-live"><i></i>All lines operational</div>
+    </div>
+    <div><h5>Platform</h5>
+      <a href="{ROOT}platform/agent-studio.html">Agent Studio</a>
+      <a href="{ROOT}platform/technology.html">Technology</a>
+      <a href="{ROOT}platform/integrations.html">Integrations</a>
+      <a href="{ROOT}platform/security-compliance.html">Security &amp; compliance</a>
+      <a href="{ROOT}platform/analytics-insights.html">Analytics &amp; insights</a>
+      <a href="{ROOT}platform/languages.html">Languages</a></div>
+    <div><h5>Solutions</h5>
+      <a href="{ROOT}solutions/barbershops.html">Barbershops</a>
+      <a href="{ROOT}solutions/auto-repair.html">Healthcare &amp; med spas</a>
+      <a href="{ROOT}solutions/tax-accounting.html">Tax &amp; accounting</a>
+      <a href="{ROOT}solutions/bookings-appointments.html">Bookings &amp; appointments</a>
+      <a href="{ROOT}solutions/no-show-recovery.html">No-show recovery</a></div>
+    <div><h5>Customers</h5>
+      <a href="{ROOT}customers/customer-stories.html">Customer stories</a>
+      <a href="{ROOT}customers/partners-ecosystem.html">Partners &amp; ecosystem</a>
+      <a href="{ROOT}developers.html">Developers</a>
+      <a href="{ROOT}pricing.html">Pricing</a></div>
+    <div><h5>Resources</h5>
+      <a href="{ROOT}resources/blog.html">Blog</a>
+      <a href="{ROOT}resources/guides.html">Guides</a>
+      <a href="{ROOT}resources/call-recordings.html">Call recordings</a>
+      <a href="{ROOT}resources/about.html">About us</a>
+      <a href="{ROOT}resources/contact.html">Contact us</a></div>
+  </div>
+  <div class="f-bottom">
+    <span>&copy; <span id="year">2026</span> Trovi AI &middot; Toronto, ON</span>
+    <span>Privacy &middot; Terms &middot; PIPEDA-compliant</span>
+  </div>
+</div></footer>
+'''
+
+HEAD = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{TITLE}</title>
+<meta name="description" content="{DESC}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{ROOT}css/styles.css">
+</head>
+<body>
+'''
+TAIL = '''
+<script src="{ROOT}js/main.js"></script>
+</body>
+</html>
+'''
+
+PAGE_BODY = '''
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">{EYEBROW}</div>
+      <h1>{TITLE}</h1>
+      <p class="sub">{BLURB}</p>
+      <div class="wip rv vis">
+        <b>This page is next on the build list.</b>
+        <p>We are shaping every page of Trovi AI one at a time, together. In the meantime, the fastest way to understand what we do is to hear it.</p>
+        <div class="btns">
+          <a class="btn btn--accent btn--sm" href="{ROOT}index.html#demos">Hear a demo</a>
+          <a class="btn btn--line btn--sm" href="{ROOT}resources/contact.html">Book a call <span class="cta-arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+'''
+
+PAGES = {
+  "platform/agent-studio.html": ("Platform", "Agent Studio", "Where your receptionist gets built &mdash; services, prices, staff, rules, and voice, all in one place."),
+  "platform/technology.html": ("Platform", "Technology", "The speech, telephony, and conversation stack behind every Trovi call."),
+  "platform/integrations.html": ("Platform", "Integrations", "Squire, Booksy, Fresha, Jobber, Google Calendar &mdash; and the rest of your stack."),
+  "platform/security-compliance.html": ("Platform", "Security &amp; compliance", "Calls encrypted in transit and at rest, data stored in Canada, PIPEDA by default."),
+  "platform/analytics-insights.html": ("Platform", "Analytics &amp; insights", "Every call logged, transcribed, and turned into numbers you can act on."),
+  "platform/languages.html": ("Platform", "Languages", "English and French today, switching mid-call when your caller does. More on the roadmap."),
+  "solutions/barbershops.html": ("Solutions &middot; Industries", "Barbershops", "Marcus &mdash; the receptionist built for the chair. Books by barber, quotes prices, recovers no-shows."),
+  "solutions/auto-repair.html": ("Solutions &middot; Industries", "Auto repair", "Ray &mdash; the service advisor for your front counter. Intake, status calls, and standard-job quotes."),
+  "solutions/tax-accounting.html": ("Solutions &middot; Industries", "Tax &amp; accounting", "Dana &mdash; the front desk that survives tax season. Screening, consults, and document checklists."),
+  "solutions/bookings-appointments.html": ("Solutions &middot; Use cases", "Bookings &amp; appointments", "Every booking captured, confirmed by text, and on the right calendar &mdash; 24/7."),
+  "solutions/faq-answering.html": ("Solutions &middot; Use cases", "FAQ answering", "Hours, prices, parking, policies &mdash; answered instantly, before they ever reach your team."),
+  "solutions/call-routing.html": ("Solutions &middot; Use cases", "Call routing", "The calls that need you reach you live, with context. The rest get handled."),
+  "solutions/no-show-recovery.html": ("Solutions &middot; Use cases", "No-show recovery", "Reminders, confirmations, and same-day rebooking calls &mdash; the quiet revenue nobody has time to chase."),
+  "developers.html": ("Developers", "Build on Trovi", "APIs and webhooks for teams that want their systems talking to their receptionist."),
+  "customers/customer-stories.html": ("Customers", "Customer stories", "Real shops, real numbers &mdash; starting in Toronto."),
+  "customers/partners-ecosystem.html": ("Customers", "Partners &amp; ecosystem", "Booking platforms, telephony, and agencies we build alongside."),
+  "resources/blog.html": ("Resources", "Blog", "Notes from the front desk &mdash; what we are learning from thousands of real local-business calls."),
+  "resources/guides.html": ("Resources", "Guides", "Playbooks for never missing another call, written for owners, not engineers."),
+  "resources/call-recordings.html": ("Resources", "Call recordings", "The full library of real calls between Trovi receptionists and real people."),
+  "resources/about.html": ("Company", "About us", "Built in Toronto by people who have run a front desk and lost the Saturday calls."),
+  "resources/careers.html": ("Company", "Careers", "Help put a world-class receptionist on every local business line in the country."),
+  "resources/contact.html": ("Company", "Contact us", "Book a call, ask anything, or just say hey &mdash; we answer fast. Obviously."),
+  "pricing.html": ("Pricing", "Flat monthly. No per-minute games.", "Published plans, setup included, cancel any month. The full pricing page is next on the build list."),
+}
+
+def root_for(path): return "../" * path.count("/")
+def write(path, html):
+    full = os.path.join(SITE, path)
+    os.makedirs(os.path.dirname(full), exist_ok=True)
+    open(full, "w").write(html)
+
+def build_page(path, eyebrow, title, blurb):
+    root = root_for(path)
+    plain = title.replace("&amp;", "&")
+    html = (HEAD.replace("{TITLE}", plain + " — Trovi AI").replace("{DESC}", blurb.replace("&mdash;","-").replace("&amp;","&"))
+            + NAV + PAGE_BODY.replace("{EYEBROW}", eyebrow).replace("{TITLE}", title).replace("{BLURB}", blurb)
+            + FOOTER + TAIL).replace("{ROOT}", root)
+    write(path, html)
+
+def build_index():
+    html = (HEAD.replace("{TITLE}", "Trovi AI — Own every call").replace("{DESC}", "The receptionist for local business. Trovi answers your line, books appointments, and follows up 24/7. Built in Toronto for barbershops, auto shops, and tax firms.")
+            + NAV + INDEX_BODY + FOOTER + TAIL).replace("{ROOT}", "")
+    write("index.html", html)
+
+def main():
+    for path,(e,t,b) in PAGES.items(): build_page(path,e,t,b)
+    build_index()
+    print("built", len(PAGES)+1, "pages")
+
+INDEX_BODY = '''
+<main>
+
+
+<!-- ===== HERO ===== -->
+<section class="trovi-home-hero">
+  <div class="trovi-home-shell">
+    <div class="trovi-home-copy">
+      <h1>Own every<br><span class="trovi-word-line" id="troviWordLine"><span class="trovi-word" id="troviWord">channel.</span><i class="trovi-word-orb" id="troviWordOrb" aria-hidden="true"></i></span></h1>
+      <p>Every call answered, every appointment<br>booked, 24/7, so a missed call never<br>costs you another customer.</p>
+      <a class="trovi-home-book" href="{ROOT}resources/contact.html">Book a call <span>→</span></a>
+
+      <div class="trovi-home-count">
+        <span class="trovi-live-dot"><i></i></span>
+        <strong id="liveCount" data-base="11127" data-rate="60">11,127</strong>
+        <span>calls answered for Toronto businesses</span>
+      </div>
+    </div>
+
+    <section class="trovi-demo-panel signal-deck" id="demos" aria-label="Industry voice demos">
+  <div class="trovi-industry-heading">
+    <h2>Choose your industry</h2>
+    <p>Hear how Trovi answers real customer calls.</p>
+  </div>
+
+  <div class="signal-viewport">
+    <div class="signal-track" id="signalTrack">
+      <div class="signal-slide" aria-label="Industries one through three">
+        <button class="signal-card signal-card--healthcare" type="button"
+        data-signal-card data-audio="assets/audio/healthcare-demo.mp3" data-label="Healthcare">
+  <span class="signal-route" aria-hidden="true"><i></i></span>
+  <span class="signal-orb" aria-hidden="true">
+    <span class="signal-orb-flow"></span>
+    <span class="signal-orb-shine"></span>
+  </span>
+  <span class="signal-card-title">Healthcare</span>
+  <span class="signal-card-copy">Appointment booking<br>and patient inquiries</span>
+  <span class="signal-player">
+    <span class="signal-play" aria-hidden="true">▶</span>
+    <span class="signal-wave" aria-hidden="true"><i style="--h:28%"></i><i style="--h:45%"></i><i style="--h:63%"></i><i style="--h:38%"></i><i style="--h:78%"></i><i style="--h:54%"></i><i style="--h:86%"></i><i style="--h:42%"></i><i style="--h:68%"></i><i style="--h:34%"></i><i style="--h:59%"></i><i style="--h:82%"></i><i style="--h:48%"></i><i style="--h:72%"></i><i style="--h:31%"></i><i style="--h:62%"></i><i style="--h:44%"></i><i style="--h:75%"></i></span>
+  </span>
+</button>
+<button class="signal-card signal-card--salons" type="button"
+        data-signal-card data-audio="assets/audio/salon-demo.mp3" data-label="Salons">
+  <span class="signal-route" aria-hidden="true"><i></i></span>
+  <span class="signal-orb" aria-hidden="true">
+    <span class="signal-orb-flow"></span>
+    <span class="signal-orb-shine"></span>
+  </span>
+  <span class="signal-card-title">Salons</span>
+  <span class="signal-card-copy">New client inquiries<br>and bookings</span>
+  <span class="signal-player">
+    <span class="signal-play" aria-hidden="true">▶</span>
+    <span class="signal-wave" aria-hidden="true"><i style="--h:28%"></i><i style="--h:45%"></i><i style="--h:63%"></i><i style="--h:38%"></i><i style="--h:78%"></i><i style="--h:54%"></i><i style="--h:86%"></i><i style="--h:42%"></i><i style="--h:68%"></i><i style="--h:34%"></i><i style="--h:59%"></i><i style="--h:82%"></i><i style="--h:48%"></i><i style="--h:72%"></i><i style="--h:31%"></i><i style="--h:62%"></i><i style="--h:44%"></i><i style="--h:75%"></i></span>
+  </span>
+</button>
+<button class="signal-card signal-card--accounting" type="button"
+        data-signal-card data-audio="assets/audio/accounting-demo.mp3" data-label="Accounting">
+  <span class="signal-route" aria-hidden="true"><i></i></span>
+  <span class="signal-orb" aria-hidden="true">
+    <span class="signal-orb-flow"></span>
+    <span class="signal-orb-shine"></span>
+  </span>
+  <span class="signal-card-title">Accounting</span>
+  <span class="signal-card-copy">Tax consultations<br>and client support</span>
+  <span class="signal-player">
+    <span class="signal-play" aria-hidden="true">▶</span>
+    <span class="signal-wave" aria-hidden="true"><i style="--h:28%"></i><i style="--h:45%"></i><i style="--h:63%"></i><i style="--h:38%"></i><i style="--h:78%"></i><i style="--h:54%"></i><i style="--h:86%"></i><i style="--h:42%"></i><i style="--h:68%"></i><i style="--h:34%"></i><i style="--h:59%"></i><i style="--h:82%"></i><i style="--h:48%"></i><i style="--h:72%"></i><i style="--h:31%"></i><i style="--h:62%"></i><i style="--h:44%"></i><i style="--h:75%"></i></span>
+  </span>
+</button>
+      </div>
+      <div class="signal-slide" aria-label="Industries four through six">
+        <button class="signal-card signal-card--real-estate" type="button"
+        data-signal-card data-audio="assets/audio/real-estate-demo.mp3" data-label="Real Estate">
+  <span class="signal-route" aria-hidden="true"><i></i></span>
+  <span class="signal-orb" aria-hidden="true">
+    <span class="signal-orb-flow"></span>
+    <span class="signal-orb-shine"></span>
+  </span>
+  <span class="signal-card-title">Real Estate</span>
+  <span class="signal-card-copy">Property inquiries<br>and viewing requests</span>
+  <span class="signal-player">
+    <span class="signal-play" aria-hidden="true">▶</span>
+    <span class="signal-wave" aria-hidden="true"><i style="--h:28%"></i><i style="--h:45%"></i><i style="--h:63%"></i><i style="--h:38%"></i><i style="--h:78%"></i><i style="--h:54%"></i><i style="--h:86%"></i><i style="--h:42%"></i><i style="--h:68%"></i><i style="--h:34%"></i><i style="--h:59%"></i><i style="--h:82%"></i><i style="--h:48%"></i><i style="--h:72%"></i><i style="--h:31%"></i><i style="--h:62%"></i><i style="--h:44%"></i><i style="--h:75%"></i></span>
+  </span>
+</button>
+<button class="signal-card signal-card--legal" type="button"
+        data-signal-card data-audio="assets/audio/legal-demo.mp3" data-label="Legal">
+  <span class="signal-route" aria-hidden="true"><i></i></span>
+  <span class="signal-orb" aria-hidden="true">
+    <span class="signal-orb-flow"></span>
+    <span class="signal-orb-shine"></span>
+  </span>
+  <span class="signal-card-title">Legal</span>
+  <span class="signal-card-copy">New client intake<br>and consultation booking</span>
+  <span class="signal-player">
+    <span class="signal-play" aria-hidden="true">▶</span>
+    <span class="signal-wave" aria-hidden="true"><i style="--h:28%"></i><i style="--h:45%"></i><i style="--h:63%"></i><i style="--h:38%"></i><i style="--h:78%"></i><i style="--h:54%"></i><i style="--h:86%"></i><i style="--h:42%"></i><i style="--h:68%"></i><i style="--h:34%"></i><i style="--h:59%"></i><i style="--h:82%"></i><i style="--h:48%"></i><i style="--h:72%"></i><i style="--h:31%"></i><i style="--h:62%"></i><i style="--h:44%"></i><i style="--h:75%"></i></span>
+  </span>
+</button>
+<button class="signal-card signal-card--ecommerce" type="button"
+        data-signal-card data-audio="assets/audio/ecommerce-demo.mp3" data-label="Ecommerce">
+  <span class="signal-route" aria-hidden="true"><i></i></span>
+  <span class="signal-orb" aria-hidden="true">
+    <span class="signal-orb-flow"></span>
+    <span class="signal-orb-shine"></span>
+  </span>
+  <span class="signal-card-title">Ecommerce</span>
+  <span class="signal-card-copy">Order support<br>and customer questions</span>
+  <span class="signal-player">
+    <span class="signal-play" aria-hidden="true">▶</span>
+    <span class="signal-wave" aria-hidden="true"><i style="--h:28%"></i><i style="--h:45%"></i><i style="--h:63%"></i><i style="--h:38%"></i><i style="--h:78%"></i><i style="--h:54%"></i><i style="--h:86%"></i><i style="--h:42%"></i><i style="--h:68%"></i><i style="--h:34%"></i><i style="--h:59%"></i><i style="--h:82%"></i><i style="--h:48%"></i><i style="--h:72%"></i><i style="--h:31%"></i><i style="--h:62%"></i><i style="--h:44%"></i><i style="--h:75%"></i></span>
+  </span>
+</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="signal-controls">
+    <button type="button" class="signal-arrow" id="signalPrev" aria-label="Previous industries">‹</button>
+    <button type="button" class="signal-arrow" id="signalNext" aria-label="Next industries">›</button>
+  </div>
+  <div class="signal-dots" aria-hidden="true">
+    <i class="active"></i><i></i>
+  </div>
+
+  <p class="signal-status" id="signalStatus" aria-live="polite"></p>
+  <audio id="signalAudio" preload="none"></audio>
+</section>
+  </div>
+</section>
+
+
+<!-- ===== LOGO MARQUEE ===== -->
+<section class="marquee-sec">
+  <p class="marquee-head">Trusted by Toronto businesses that can&rsquo;t afford a missed call.</p>
+  <div class="marquee"><div class="marquee-track" id="marqTrack">
+    <span class="mq-caps">Easy Tax Return</span><span class="mq-caps">Black &amp; White</span><span class="mq-serif">DA Marketing</span><span>Yvonne Beaut&eacute;</span>
+    <span class="mq-caps">Easy Tax Return</span><span class="mq-caps">Black &amp; White</span><span class="mq-serif">DA Marketing</span><span>Yvonne Beaut&eacute;</span>
+    <span class="mq-caps">Easy Tax Return</span><span class="mq-caps">Black &amp; White</span><span class="mq-serif">DA Marketing</span><span>Yvonne Beaut&eacute;</span>
+  </div></div>
+</section>
+
+<!-- ===== VIDEO BAND ===== -->
+<section><div class="wrap">
+  <div class="videoblock rv" data-video="assets/video/hero-spot.mp4">
+    <div class="vposter"></div>
+    <div class="vhead"><h2>Finally. A front desk that actually picks up.</h2></div>
+    <button class="vplay" aria-label="Play video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+    <span class="v-note">Your spot drops in soon &mdash; assets/video/hero-spot.mp4</span>
+  </div>
+</div></section>
+
+<!-- ===== STATS (dark) ===== -->
+<section class="band-dark"><div class="wrap">
+  <div class="stats-head center rv">
+    <h2 class="h-lg">Real shops. Real numbers.</h2>
+    <p class="sub" style="max-width:640px;margin:18px auto 0">The calls that run your day &mdash; bookings, reschedules, quotes, the Saturday rush &mdash; handled, and turned into results owners can see.</p>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-card rv arc-teal"><div class="label">Toronto barbershop</div><div class="arc"></div>
+      <div class="stat-bottom"><div class="stat-num" data-value="41">0</div><p class="stat-desc">bookings captured in month one that used to hit voicemail</p></div></div>
+    <div class="stat-card rv arc-purple"><div class="label">Auto repair shop</div><div class="arc"></div>
+      <div class="stat-bottom"><div class="stat-num" data-value="2300" data-prefix="$" data-commas>0</div><p class="stat-desc">monthly service revenue recovered per bay</p></div></div>
+    <div class="stat-card rv arc-orange"><div class="label">Tax &amp; accounting firm</div><div class="arc"></div>
+      <div class="stat-bottom"><div class="stat-num" data-value="74" data-suffix="%">0</div><p class="stat-desc">of new-client calls converted into booked consults</p></div></div>
+    <div class="stat-card rv arc-silver"><div class="label">Across all clients</div><div class="arc"></div>
+      <div class="stat-bottom"><div class="stat-num" data-value="100" data-suffix="%">0</div><p class="stat-desc">of calls answered by the second ring, 24/7</p></div></div>
+  </div>
+</div></section>
+
+<!-- ===== FEATURED CUSTOMER STORY ===== -->
+<section><div class="wrap">
+  <div class="story-head rv">
+    <h2>Real owners.<br>Real growth.</h2>
+    <p>How local businesses across Toronto are turning every phone call into booked, paying customers with Trovi.</p>
+  </div>
+  <div class="story rv">
+    <div class="story-media" data-video="assets/video/story-yvonne.mp4">
+      <div class="ph"></div>
+      <div class="who"><b>Yvonne</b><small>Owner, Yvonne Beaut&eacute;</small></div>
+      <span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Watch video</span>
+      <span class="v-note">Video drops in soon &mdash; assets/video/story-yvonne.mp4</span>
+    </div>
+    <div class="story-body">
+      <div class="eyebrow">Med spa &middot; Yvonne Beaut&eacute;</div>
+      <h3>One phone line became <span class="accent">two locations.</span></h3>
+      <p>Trovi answered every after-hours enquiry, rebooked no-shows the same day, and offered the add-on package on every call. Within a year the upsell revenue alone funded a second location &mdash; booked almost entirely by phone, without hiring a receptionist.</p>
+      <a class="story-link" href="{ROOT}customers/customer-stories.html">Read the customer story &rarr;</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== TESTIMONIALS (dark carousel) ===== -->
+<section class="band-dark tcar"><div class="wrap">
+  <div class="tcar-head rv">
+    <h2 class="h-lg">What owners say.</h2>
+    <div class="tcar-arrows">
+      <button class="arrow" id="tcarPrev" aria-label="Previous"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="arrow" id="tcarNext" aria-label="Next"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+  <div class="tcar-track" id="tcarTrack">
+    <div class="tcard"><div><div class="logo-txt">Black &amp; White Barbershop</div><blockquote>&ldquo;Saturdays used to be chaos &mdash; nobody could book while we were cutting. Now every call gets answered and the chairs stay full. It paid for itself in a week.&rdquo;</blockquote><div class="cite">Mahan B., Owner &middot; Black &amp; White</div></div><div class="face"><div class="ph"></div><span>photo drops in</span></div></div>
+    <div class="tcard"><div><div class="logo-txt">Easy Tax Return</div><blockquote>&ldquo;During tax season we were drowning in calls. Trovi screened every new client and booked the consults straight into our calendar. We didn&rsquo;t miss a single lead.&rdquo;</blockquote><div class="cite">Owner &middot; Easy Tax Return</div></div><div class="face"><div class="ph"></div><span>photo drops in</span></div></div>
+    <div class="tcard"><div><div class="logo-txt">Yvonne Beaut&eacute;</div><blockquote>&ldquo;It rebooks no-shows and upsells packages on every call. That one thing funded our second location. I still can&rsquo;t believe it&rsquo;s not a person.&rdquo;</blockquote><div class="cite">Yvonne, Owner &middot; Yvonne Beaut&eacute;</div></div><div class="face"><div class="ph"></div><span>photo drops in</span></div></div>
+    <div class="tcard"><div><div class="logo-txt">DA Marketing</div><blockquote>&ldquo;We tell clients we never miss a call &mdash; now it&rsquo;s actually true. Every enquiry gets picked up, qualified, and logged before we even sit down.&rdquo;</blockquote><div class="cite">Founder &middot; DA Marketing</div></div><div class="face"><div class="ph"></div><span>photo drops in</span></div></div>
+  </div>
+  <div class="tcar-dots" id="tcarDots"></div>
+</div></section>
+
+<!-- ===== FAQ ===== -->
+<section><div class="wrap faq-wrap">
+  <div class="faq-head rv"><h2 class="h-lg">Questions owners actually ask.</h2></div>
+  <div class="faq-list rv">
+    <div class="faq-item"><button class="faq-q">Will my callers know it&rsquo;s not a person?<span class="ico"></span></button><div class="faq-a"><p>Most don&rsquo;t &mdash; the voice is natural, it handles interruptions, and it knows your shop. But we never trick anyone: if a caller asks, it says it&rsquo;s Trovi, your virtual receptionist. Customers care that they got helped fast and booked in, not who picked up.</p></div></div>
+    <div class="faq-item"><button class="faq-q">What happens when it doesn&rsquo;t know the answer?<span class="ico"></span></button><div class="faq-a"><p>It never guesses or invents a price. It either takes a message with all the details or transfers the call to you live, with context on who&rsquo;s calling and why &mdash; so nothing important slips through and nobody gets bad information.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Does it book into the calendar I already use?<span class="ico"></span></button><div class="faq-a"><p>Yes. Trovi plugs into Squire, Booksy, Fresha, Jobber, and Google Calendar, so bookings land in the system you already run &mdash; no new software to learn, no double-entry, no switching your whole shop over.</p></div></div>
+    <div class="faq-item"><button class="faq-q">How fast can it be live on my number?<span class="ico"></span></button><div class="faq-a"><p>One 20-minute setup call to learn your services, prices, and hours &mdash; and you&rsquo;re live within 48 hours, on your existing number. You keep the number your customers already have; we just make sure it always gets answered.</p></div></div>
+    <div class="faq-item"><button class="faq-q">What does it actually cost?<span class="ico"></span></button><div class="faq-a"><p>A flat monthly rate with setup included and no per-minute meter running in the background. Cancel any month. We&rsquo;re offering founding pricing to the first 20 Toronto businesses &mdash; book a call and we&rsquo;ll show you the number for your shop.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Do I have to let my receptionist go?<span class="ico"></span></button><div class="faq-a"><p>No &mdash; Trovi is built to work alongside your team. It catches the overflow, the after-hours calls, and the Saturday rush your staff physically can&rsquo;t get to, so the people you have can focus on the customer in front of them instead of a ringing phone.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Is my customers&rsquo; information safe?<span class="ico"></span></button><div class="faq-a"><p>Every call is encrypted in transit and at rest, data is stored in Canada, and we operate to PIPEDA standards by default. Every call is also logged and transcribed, so you have a clean record of exactly what was said and booked.</p></div></div>
+  </div>
+</div></section>
+
+<!-- ===== CTA ===== -->
+<section><div class="wrap">
+  <div class="cta-band rv"><div class="glow"></div>
+    <h2>Own every call.</h2>
+    <p class="sub">Hear a Trovi receptionist on a real line, then put one on yours. Founding pricing for the first 20 Toronto businesses.</p>
+    <div class="cta-btns">
+      <a class="btn btn--accent btn--pill" href="{ROOT}resources/contact.html">Book a call <span class="cta-arrow">→</span></a>
+      <a class="btn btn--line btn--pill" href="#demos">Hear a demo</a>
+    </div>
+  </div>
+</div></section>
+
+</main>
+
+<div class="v-modal" id="vmodal" aria-modal="true" role="dialog">
+  <button class="v-close" aria-label="Close">&times;</button>
+  <video controls playsinline></video>
+</div>
+'''
+
+if __name__ == "__main__":
+    main()
