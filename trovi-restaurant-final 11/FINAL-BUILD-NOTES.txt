@@ -1,0 +1,22 @@
+TROVI AI RESTAURANT LANDING PAGE — FINAL VISUAL BUILD
+
+Primary page:
+  solutions/restaurants.html
+
+Exact visual reference included:
+  FINAL-LANDING-PAGE-REFERENCE.png
+
+Approved orb artwork:
+  assets/planets/trovi-approved-orb.png
+
+Open the folder in VS Code, start Live Server, then open:
+  /solutions/restaurants.html
+
+The restaurant hero has been restyled to closely match the included reference image, including the larger card, larger orb, exact headline line breaks, spacing, buttons, typography hierarchy and warm off-white presentation.
+
+
+V20 layout refinement: applied rotating headline/copy updates to this exact ZIP, moved the left hero copy slightly farther right, and moved the demo card slightly farther left while preserving responsive spacing.
+
+V21: restored the exact approved orb artwork and removed the WebGL deformation layer. Layout and copy from V20 are unchanged.
+
+V24 update: removed the decorative strings/routes attached to all homepage industry orbs.
