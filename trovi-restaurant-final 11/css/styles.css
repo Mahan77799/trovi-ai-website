@@ -1,7 +1,11 @@
-
-
-
-
+/* Final company-name size override */
+.marquee-track span,
+.marquee-track .mq-caps {
+  min-width: 200px !important;
+  font-size: clamp(11px, 1.1vw, 14px) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+}
 
 
 /* ==========================================================================
@@ -1602,10 +1606,10 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;margin-top:20px}
 }
 
 .signal-card--ecommerce{
-  --tone:#69cbb8;
-  --tone-light:#d5f4ee;
-  --tone-mid:#86d8c8;
-  --tone-deep:#3f9589;
+  --tone:#f36b32;
+  --tone-light:#ffd7c2;
+  --tone-mid:#ff8a50;
+  --tone-deep:#b83b16;
 }
 
 .signal-route{
@@ -2226,15 +2230,3 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;margin-top:20px}
 
 /* v24: remove decorative strings/routes attached to homepage orbs */
 .signal-card .signal-route{display:none!important;}
-
-/* =========================================================
-   FINAL TRUSTED-COMPANY NAME SIZE OVERRIDE
-   ========================================================= */
-.marquee-track span,
-.marquee-track .mq-caps,
-.marquee-track .mq-serif {
-  min-width: 180px !important;
-  font-size: clamp(11px, 1.05vw, 14px) !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.02em !important;
-}

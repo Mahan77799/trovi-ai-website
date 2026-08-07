@@ -1,0 +1,564 @@
+/* TROVI AI — Midnight Luxury Theme
+   Colour-only upgrade. Existing layout, interactions and original orb artwork remain intact. */
+
+:root{
+  --lux-bg:#02050d;
+  --lux-bg-2:#070c19;
+  --lux-panel:rgba(7,12,25,.78);
+  --lux-panel-strong:rgba(4,8,18,.94);
+  --lux-text:#f8f9fd;
+  --lux-muted:#aeb7cc;
+  --lux-blue:#7397ff;
+  --lux-blue-soft:#a9bcff;
+  --lux-gold:#d9aa49;
+  --lux-gold-2:#f3ce78;
+  --lux-line:rgba(181,199,255,.22);
+  --lux-line-gold:rgba(217,170,73,.5);
+}
+
+body.luxury-theme{
+  --paper:var(--lux-bg);
+  --paper-2:#080e1c;
+  --paper-3:#0b1222;
+  --ink:var(--lux-text);
+  --ink-2:#d0d6e4;
+  --muted:var(--lux-muted);
+  --line:rgba(176,195,240,.16);
+  --line-2:rgba(176,195,240,.28);
+  --accent:var(--lux-gold);
+  --accent-2:#b9852f;
+  --accent-soft:rgba(217,170,73,.13);
+  --black:#030711;
+  --black-2:#0a1121;
+  background-color:var(--lux-bg);
+  background-image:url('../assets/branding/luxury-satin-bg-v2.webp');
+  background-size:cover;
+  background-position:center top;
+  background-attachment:fixed;
+  color:var(--lux-text);
+  color-scheme:dark;
+}
+
+body.luxury-theme::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 16% 14%,rgba(103,138,255,.10),transparent 26%),
+    radial-gradient(circle at 84% 12%,rgba(233,185,89,.08),transparent 22%),
+    linear-gradient(180deg,rgba(1,3,9,.02),rgba(0,0,0,.05));
+}
+
+body.luxury-theme main,
+body.luxury-theme section,
+body.luxury-theme footer{background-color:transparent}
+body.luxury-theme .sub,
+body.luxury-theme .muted{color:var(--lux-muted)}
+body.luxury-theme .accent,
+body.luxury-theme .eyebrow{color:var(--lux-gold-2)}
+body.luxury-theme ::selection{background:var(--lux-gold);color:#07101d}
+
+/* Navigation and supplied Trovi AI logo */
+body.luxury-theme .nav-wrap{
+  background:rgba(1,4,11,.88)!important;
+  border-bottom-color:rgba(218,174,83,.2)!important;
+  box-shadow:0 10px 34px rgba(0,0,0,.22);
+  backdrop-filter:blur(18px) saturate(120%);
+}
+body.luxury-theme .logo{min-width:145px}
+body.luxury-theme .logo-image{
+  display:block;
+  width:145px;
+  height:auto;
+  max-height:38px;
+  object-fit:contain;
+  object-position:left center;
+  filter:drop-shadow(0 0 12px rgba(126,160,255,.12));
+}
+body.luxury-theme .nav-link,
+body.luxury-theme .nav-actions .login{color:#f3f5fb}
+body.luxury-theme .nav-link:hover,
+body.luxury-theme .has-dd.open>.nav-link,
+body.luxury-theme .has-dd:hover>.nav-link{background:rgba(100,130,208,.11);color:#fff}
+body.luxury-theme .dd,
+body.luxury-theme .m-nav{
+  background:rgba(5,10,21,.97);
+  border-color:rgba(176,195,240,.2);
+  box-shadow:0 24px 70px rgba(0,0,0,.5);
+}
+body.luxury-theme .dd a,
+body.luxury-theme .m-nav a{color:#cbd3e5;border-color:rgba(176,195,240,.12)}
+body.luxury-theme .dd a:hover{background:rgba(95,125,205,.12);color:#fff}
+body.luxury-theme .dd h5,
+body.luxury-theme .m-nav h5{color:var(--lux-gold-2)}
+body.luxury-theme .burger span{background:#fff}
+
+/* Buttons */
+body.luxury-theme .btn,
+body.luxury-theme .trovi-home-book{
+  color:#fff;
+  border-color:rgba(214,225,255,.32);
+  background:linear-gradient(145deg,rgba(10,18,38,.94),rgba(3,7,17,.98));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 12px 30px rgba(0,0,0,.22);
+}
+body.luxury-theme .btn--accent{
+  border:1px solid rgba(217,170,73,.66);
+  background:linear-gradient(145deg,rgba(36,27,10,.9),rgba(5,9,19,.98));
+  color:#fff;
+}
+body.luxury-theme .btn--accent .cta-arrow,
+body.luxury-theme .trovi-home-book span{color:var(--lux-gold-2)}
+body.luxury-theme .btn:hover,
+body.luxury-theme .trovi-home-book:hover{
+  transform:translateY(-2px);
+  border-color:var(--lux-gold-2);
+  box-shadow:0 0 0 1px rgba(217,170,73,.16),0 16px 36px rgba(0,0,0,.34),0 0 24px rgba(93,128,222,.12);
+}
+
+/* Homepage — identical structure, luxury colour treatment */
+body.luxury-theme .trovi-home-hero{
+  background:transparent!important;
+  isolation:isolate;
+}
+body.luxury-theme .trovi-home-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(90deg,rgba(1,4,11,.16) 0%,rgba(1,4,11,.10) 18%,rgba(1,4,11,.02) 40%,transparent 58%),
+    radial-gradient(circle at 82% 18%,rgba(96,130,238,.05),transparent 28%),
+    radial-gradient(circle at 14% 76%,rgba(233,185,89,.04),transparent 26%);
+}
+body.luxury-theme .trovi-home-copy h1{color:#fff;text-shadow:0 6px 34px rgba(0,0,0,.34)}
+body.luxury-theme .trovi-word-line{
+  --word-accent:var(--lux-gold)!important;
+  --word-accent-light:#f6dc99!important;
+  --word-accent-deep:#9c6c20!important;
+}
+body.luxury-theme .trovi-word,
+body.luxury-theme .trovi-word-orb{color:var(--lux-gold)!important}
+body.luxury-theme .trovi-word-orb{
+  background:radial-gradient(circle at 34% 28%,#fff7d7 0 7%,#f4cf72 16%,#b77c21 58%,#50300d 100%)!important;
+  box-shadow:inset -5px -6px 12px rgba(27,14,2,.55),inset 4px 4px 10px rgba(255,246,203,.55),0 0 22px rgba(217,170,73,.42)!important;
+}
+body.luxury-theme .trovi-home-copy p{color:#c7cede}
+body.luxury-theme .trovi-home-count strong{color:#fff}
+body.luxury-theme .trovi-home-count>span:last-child{color:#aeb7ca}
+body.luxury-theme .trovi-live-dot{
+  background:rgba(21,49,77,.72);
+  border:1px solid rgba(102,219,231,.18);
+  box-shadow:0 0 22px rgba(82,204,226,.13);
+}
+body.luxury-theme .trovi-live-dot i{background:#78e8f4;box-shadow:0 0 12px #78e8f4}
+body.luxury-theme .trovi-industry-heading h2{color:#f7f8fc}
+body.luxury-theme .trovi-industry-heading h2::first-line{color:#f7f8fc}
+body.luxury-theme .trovi-industry-heading p{color:#aab5cc}
+
+/* Keep every orb's original colour artwork; darken only its card */
+body.luxury-theme .signal-card{
+  background:
+    radial-gradient(circle at 50% 16%,color-mix(in srgb,var(--tone) 7%,transparent),transparent 34%),
+    linear-gradient(155deg,rgba(10,17,32,.94),rgba(2,6,15,.96));
+  color:#f8f9fc;
+  border-color:color-mix(in srgb,var(--tone) 46%,rgba(181,199,255,.16));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 22px 50px rgba(0,0,0,.3);
+}
+body.luxury-theme .signal-card:hover,
+body.luxury-theme .signal-card.playing,
+body.luxury-theme .signal-card.is-word-active{
+  border-color:color-mix(in srgb,var(--tone) 78%,#fff 4%)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 24px 54px rgba(0,0,0,.38),0 0 28px color-mix(in srgb,var(--tone) 16%,transparent)!important;
+}
+body.luxury-theme .signal-card-title{color:#fff}
+body.luxury-theme .signal-card-copy{color:#aeb7c9}
+body.luxury-theme .signal-play,
+body.luxury-theme .signal-arrow{
+  background:rgba(4,9,20,.9);
+  border-color:color-mix(in srgb,var(--tone, var(--lux-blue)) 50%,rgba(210,222,255,.2));
+  color:var(--tone,var(--lux-gold-2));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 10px 26px rgba(0,0,0,.26);
+}
+body.luxury-theme .signal-arrow{color:#fff;border-color:rgba(188,204,242,.25)}
+body.luxury-theme .signal-dots i{background:#263047}
+body.luxury-theme .signal-dots i.active{background:var(--lux-gold);box-shadow:0 0 12px rgba(217,170,73,.4)}
+body.luxury-theme .signal-status{color:#aab4c7}
+
+/* Trust marquee */
+body.luxury-theme .marquee-sec{
+  background:rgba(1,5,13,.52)!important;
+  border-color:rgba(179,197,239,.12)!important;
+}
+body.luxury-theme .marquee-head{color:#d9deea}
+body.luxury-theme .marquee-track span{color:#74809a!important;opacity:.75}
+
+/* Shared surfaces throughout the site */
+body.luxury-theme .story,
+body.luxury-theme .tcard,
+body.luxury-theme .stat-card,
+body.luxury-theme .pricing-card,
+body.luxury-theme .feature-card,
+body.luxury-theme .resource-card,
+body.luxury-theme .contact-card,
+body.luxury-theme .faq-item,
+body.luxury-theme [class$="-card"]:not(.signal-card):not(.demo-card){
+  background:linear-gradient(155deg,rgba(10,17,32,.9),rgba(3,7,16,.94));
+  border-color:rgba(177,197,244,.17);
+  color:var(--lux-text);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045),0 20px 50px rgba(0,0,0,.22);
+}
+body.luxury-theme .story-head p,
+body.luxury-theme .story-body p,
+body.luxury-theme [class$="-card"] p{color:#aeb7c9}
+body.luxury-theme .story-link{color:#fff;border-color:var(--lux-gold)}
+body.luxury-theme .videoblock,
+body.luxury-theme .cta-band,
+body.luxury-theme .band-dark{
+  background:linear-gradient(150deg,rgba(8,15,31,.96),rgba(1,4,11,.98));
+  border:1px solid rgba(181,199,255,.14);
+}
+body.luxury-theme .videoblock .vposter{
+  background:
+    radial-gradient(110% 120% at 72% 10%,rgba(42,79,170,.27),transparent 53%),
+    radial-gradient(100% 110% at 20% 100%,rgba(217,170,73,.14),transparent 50%),
+    linear-gradient(160deg,#0d172c,#030711);
+}
+body.luxury-theme .cta-band .glow{background:radial-gradient(circle at 50% 6%,rgba(67,100,190,.48),rgba(217,170,73,.12) 28%,transparent 64%)}
+body.luxury-theme footer{border-top-color:rgba(181,199,255,.14);color:#aeb7c9}
+body.luxury-theme footer h5{color:#fff}
+body.luxury-theme footer a:hover{color:var(--lux-gold-2)}
+
+/* Restaurant and other solution pages: retain geometry, switch surfaces only */
+body.luxury-theme.restaurant-page{
+  --rr-orange:var(--lux-gold);
+  --rr-orange-2:var(--lux-gold-2);
+  --rr-peach:rgba(217,170,73,.1);
+  --rr-violet:#7195ff;
+  --rr-blue:#5f89e8;
+  background-color:var(--lux-bg)!important;
+  color:var(--lux-text)!important;
+}
+body.luxury-theme.restaurant-page .rr-hero,
+body.luxury-theme.restaurant-page .rr-workflows,
+body.luxury-theme.restaurant-page .rr-dashboard-section,
+body.luxury-theme.restaurant-page .rr-pressure,
+body.luxury-theme.restaurant-page .rr-faq,
+body.luxury-theme.restaurant-page .rr-proof,
+body.luxury-theme.restaurant-page .rr-final{
+  background:transparent!important;
+  border-color:rgba(181,199,255,.12)!important;
+}
+body.luxury-theme.restaurant-page .rr-pill,
+body.luxury-theme.restaurant-page .rr-demo-card,
+body.luxury-theme.restaurant-page .rr-dashboard>*,
+body.luxury-theme.restaurant-page .rr-faq-item,
+body.luxury-theme.restaurant-page .rr-proof-card{
+  background:linear-gradient(155deg,rgba(10,17,32,.92),rgba(3,7,16,.96))!important;
+  color:#fff!important;
+  border-color:rgba(181,199,255,.2)!important;
+  box-shadow:0 22px 55px rgba(0,0,0,.3)!important;
+}
+body.luxury-theme.restaurant-page p,
+body.luxury-theme.restaurant-page .rr-section-head p,
+body.luxury-theme.restaurant-page .rr-feature-list p,
+body.luxury-theme.restaurant-page .rr-disclaimer{color:#aeb7c9!important}
+body.luxury-theme.restaurant-page .rr-feature-list article{border-color:rgba(181,199,255,.14)}
+body.luxury-theme.restaurant-page .rr-feature-list article>span{background:rgba(217,170,73,.1);border-color:rgba(217,170,73,.32);color:var(--lux-gold-2)}
+body.luxury-theme.restaurant-page .rr-flow-visual{background:linear-gradient(145deg,#081126,#02050d)}
+
+/* Form controls */
+body.luxury-theme input,
+body.luxury-theme textarea,
+body.luxury-theme select{
+  background:#080f20;
+  color:#fff;
+  border-color:rgba(181,199,255,.22);
+}
+body.luxury-theme input::placeholder,
+body.luxury-theme textarea::placeholder{color:#768198}
+
+@media(max-width:1040px){
+  body.luxury-theme{background-attachment:scroll;background-size:auto 1100px}
+  body.luxury-theme .logo{min-width:125px}
+  body.luxury-theme .logo-image{width:125px;max-height:32px}
+}
+@media(max-width:560px){
+  body.luxury-theme .logo-image{width:118px}
+  body.luxury-theme .signal-card{background:linear-gradient(155deg,rgba(10,17,32,.96),rgba(3,7,16,.98))}
+}
+body.luxury-theme .trovi-industry-heading h2 em{
+  color:var(--lux-gold);
+  font-style:normal;
+  font-weight:inherit;
+}
+
+
+/* ================================================================
+   FINAL HOMEPAGE CONTENT + VISIBILITY POLISH
+   ================================================================ */
+
+/* Two hero calls to action, with thin champagne-gold outlines. */
+body.luxury-theme .trovi-home-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+body.luxury-theme .trovi-home-actions .trovi-home-book{
+  min-width:190px;
+  border:1px solid rgba(243,206,120,.72);
+  background:linear-gradient(145deg,rgba(10,18,38,.96),rgba(3,7,17,.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 0 0 1px rgba(217,170,73,.05),
+    0 12px 30px rgba(0,0,0,.30),
+    0 0 20px rgba(217,170,73,.08);
+}
+body.luxury-theme .trovi-home-actions .trovi-home-book--primary{
+  background:linear-gradient(145deg,rgba(45,33,10,.88),rgba(5,9,19,.98));
+}
+body.luxury-theme .trovi-home-actions .trovi-home-book--secondary{
+  color:#f8f9fd;
+  background:linear-gradient(145deg,rgba(7,14,31,.94),rgba(2,6,15,.98));
+}
+body.luxury-theme .trovi-home-actions .trovi-home-book:hover{
+  border-color:#f3ce78;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 16px 36px rgba(0,0,0,.38),
+    0 0 24px rgba(217,170,73,.18);
+}
+
+/* Make both navigation CTA buttons easier to see on the dark header. */
+body.luxury-theme .nav-actions .btn{
+  border:1px solid rgba(243,206,120,.66)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 18px rgba(217,170,73,.08);
+}
+body.luxury-theme .nav-actions .btn--line{
+  color:#f8f9fd;
+  background:linear-gradient(145deg,rgba(7,14,31,.92),rgba(2,6,15,.98));
+}
+body.luxury-theme .nav-actions .btn--accent{
+  background:linear-gradient(145deg,rgba(45,33,10,.84),rgba(5,9,19,.98));
+}
+
+/* Improve contrast in the trusted-business section. */
+body.luxury-theme .marquee-head{
+  color:#f0f3fa!important;
+}
+body.luxury-theme .marquee-track span{
+  color:#c6cede!important;
+  opacity:.92!important;
+  text-shadow:0 2px 14px rgba(0,0,0,.36);
+}
+
+/* Improve muted text visibility across the dark sections. */
+body.luxury-theme .sub,
+body.luxury-theme .signal-card-copy,
+body.luxury-theme .story-body p,
+body.luxury-theme .stat-desc{
+  color:#c1c9d9!important;
+}
+
+/* The longer Ask Trovi AI Anything title should remain balanced. */
+body.luxury-theme .signal-card--ecommerce .signal-card-title{
+  max-width:220px;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:20px;
+  line-height:1.12;
+}
+
+@media(max-width:720px){
+  body.luxury-theme .trovi-home-actions{
+    width:100%;
+    flex-direction:column;
+    align-items:stretch;
+  }
+  body.luxury-theme .trovi-home-actions .trovi-home-book{
+    width:100%;
+    min-width:0;
+  }
+}
+
+
+/* =====================================================================
+   V5 CONTENT, TESTIMONIAL, NAV AND RESTAURANT CONTRAST REFINEMENT
+   ===================================================================== */
+
+/* More compact header actions throughout the site. */
+body.luxury-theme .nav-actions{
+  gap:10px!important;
+}
+body.luxury-theme .nav-actions .btn,
+body.luxury-theme.restaurant-page .nav-actions .btn{
+  height:40px!important;
+  min-height:40px!important;
+  padding:0 15px!important;
+  border-radius:10px!important;
+  font-size:12.5px!important;
+  line-height:1!important;
+  min-width:0!important;
+}
+
+/* Cleaner testimonial section without photo placeholders. */
+body.luxury-theme .tcar-head{
+  align-items:center;
+}
+body.luxury-theme .tcar-head h2{
+  max-width:980px;
+  font-size:clamp(34px,4.4vw,62px);
+  line-height:1.03;
+  letter-spacing:-.04em;
+}
+body.luxury-theme .tcar-head h2 span{
+  display:block;
+  margin-top:7px;
+  color:var(--lux-gold-2);
+  font-size:.72em;
+  line-height:1.08;
+}
+body.luxury-theme .tcard{
+  grid-template-columns:1fr!important;
+  min-height:360px;
+  padding:clamp(34px,5vw,62px)!important;
+  background:linear-gradient(145deg,rgba(7,14,29,.97),rgba(2,6,15,.98))!important;
+}
+body.luxury-theme .tcard-review{
+  max-width:980px;
+}
+body.luxury-theme .tcard .logo-txt{
+  margin-bottom:9px;
+  color:#fff;
+  font-size:20px;
+}
+body.luxury-theme .review-stars{
+  color:#f3ce78;
+  font-size:20px;
+  line-height:1;
+  letter-spacing:.16em;
+  margin-bottom:25px;
+  text-shadow:0 0 18px rgba(243,206,120,.22);
+}
+body.luxury-theme .tcard blockquote{
+  max-width:920px;
+  color:#f5f7fc;
+  font-size:clamp(20px,2.2vw,29px);
+  line-height:1.42;
+}
+body.luxury-theme .tcard .cite{
+  color:#bec7d8;
+  font-size:15.5px;
+}
+body.luxury-theme .tcard .face{
+  display:none!important;
+}
+
+/* Strong, consistent readability on the restaurant landing page. */
+body.luxury-theme.restaurant-page .rr-title-fixed{
+  color:#ffffff!important;
+  text-shadow:0 6px 32px rgba(0,0,0,.35);
+}
+body.luxury-theme.restaurant-page .rr-rotating-word{
+  color:#f3ce78!important;
+  text-shadow:0 0 22px rgba(217,170,73,.18);
+}
+body.luxury-theme.restaurant-page .rr-hero-copy>p,
+body.luxury-theme.restaurant-page .rr-section-head p,
+body.luxury-theme.restaurant-page .rr-workflow-copy p,
+body.luxury-theme.restaurant-page .rr-pressure-copy p,
+body.luxury-theme.restaurant-page .rr-pilot-copy p,
+body.luxury-theme.restaurant-page .rr-faq-grid>div>p,
+body.luxury-theme.restaurant-page .rr-problem-card p,
+body.luxury-theme.restaurant-page .rr-steps p,
+body.luxury-theme.restaurant-page .rr-feature-list p,
+body.luxury-theme.restaurant-page .rr-disclaimer{
+  color:#d3daea!important;
+}
+body.luxury-theme.restaurant-page .rr-section-head h2,
+body.luxury-theme.restaurant-page .rr-workflow-copy h2,
+body.luxury-theme.restaurant-page .rr-dashboard-head h2,
+body.luxury-theme.restaurant-page .rr-pressure-copy h2,
+body.luxury-theme.restaurant-page .rr-pilot-copy h2,
+body.luxury-theme.restaurant-page .rr-faq-grid h2,
+body.luxury-theme.restaurant-page .rr-problem-card h3,
+body.luxury-theme.restaurant-page .rr-feature-list h3,
+body.luxury-theme.restaurant-page .rr-steps h3,
+body.luxury-theme.restaurant-page .rr-flow-header b,
+body.luxury-theme.restaurant-page .rr-incoming strong,
+body.luxury-theme.restaurant-page .rr-flow-outcomes strong,
+body.luxury-theme.restaurant-page .rr-chart-title strong,
+body.luxury-theme.restaurant-page .rr-metric-card strong,
+body.luxury-theme.restaurant-page .rr-donut-card strong{
+  color:#ffffff!important;
+}
+body.luxury-theme.restaurant-page .rr-kicker,
+body.luxury-theme.restaurant-page .rr-card-num{
+  color:#f3ce78!important;
+}
+body.luxury-theme.restaurant-page .rr-pill{
+  color:#f3ce78!important;
+  background:rgba(3,8,18,.80)!important;
+  border-color:rgba(243,206,120,.42)!important;
+}
+body.luxury-theme.restaurant-page .rr-launch--featured{
+  color:#f7f8fc!important;
+  background:rgba(4,10,22,.80)!important;
+  border-color:rgba(243,206,120,.30)!important;
+}
+body.luxury-theme.restaurant-page .rr-live-demo-head--single>div span{
+  color:#f8f9fd!important;
+}
+body.luxury-theme.restaurant-page .rr-live-demo-head--single small{
+  color:#c6cede!important;
+}
+body.luxury-theme.restaurant-page .rr-problem-card,
+body.luxury-theme.restaurant-page .rr-feature-list article,
+body.luxury-theme.restaurant-page .rr-pressure-card,
+body.luxury-theme.restaurant-page .rr-steps article,
+body.luxury-theme.restaurant-page .rr-pilot-card,
+body.luxury-theme.restaurant-page .rr-chart-card,
+body.luxury-theme.restaurant-page .rr-metric-card,
+body.luxury-theme.restaurant-page .rr-donut-card{
+  background:linear-gradient(155deg,rgba(9,17,34,.94),rgba(2,6,15,.97))!important;
+  border-color:rgba(181,199,255,.18)!important;
+  color:#ffffff!important;
+}
+body.luxury-theme.restaurant-page .rr-flow-header span,
+body.luxury-theme.restaurant-page .rr-incoming small,
+body.luxury-theme.restaurant-page .rr-flow-outcomes small,
+body.luxury-theme.restaurant-page .rr-chart-title small,
+body.luxury-theme.restaurant-page .rr-metric-card small,
+body.luxury-theme.restaurant-page .rr-metric-card span,
+body.luxury-theme.restaurant-page .rr-donut-card small,
+body.luxury-theme.restaurant-page .rr-chart-axis,
+body.luxury-theme.restaurant-page .rr-example-label{
+  color:#c2ccde!important;
+}
+body.luxury-theme.restaurant-page .rr-capability-track span{
+  color:#dce2ef!important;
+}
+body.luxury-theme.restaurant-page .rr-btn--dark{
+  background:linear-gradient(145deg,rgba(42,31,10,.94),rgba(4,9,19,.98))!important;
+  color:#ffffff!important;
+  border:1px solid rgba(243,206,120,.56)!important;
+}
+body.luxury-theme.restaurant-page .rr-btn--light{
+  background:rgba(5,11,24,.94)!important;
+  color:#ffffff!important;
+  border:1px solid rgba(243,206,120,.38)!important;
+}
+
+@media(max-width:720px){
+  body.luxury-theme .tcar-head{
+    align-items:flex-start;
+  }
+  body.luxury-theme .tcar-head h2 span{
+    font-size:.78em;
+  }
+  body.luxury-theme .tcard{
+    min-height:0;
+  }
+}

@@ -285,11 +285,20 @@
   cards.forEach(function(card){
     card.addEventListener('click', function(){
       var src = card.getAttribute('data-audio');
+      var phone = (card.getAttribute('data-phone') || '').trim();
       var label = card.getAttribute('data-label') || 'Industry';
 
       cards.forEach(function(other){
         if (other !== card) other.classList.remove('playing');
       });
+
+      /* A real demo number takes priority over prerecorded audio. */
+      if (phone){
+        var cleanPhone = phone.replace(/[^+\d]/g, '');
+        if (status) status.textContent = 'Opening the ' + label + ' live demo line…';
+        window.location.href = 'tel:' + cleanPhone;
+        return;
+      }
 
       if (!audio) return;
 
@@ -307,7 +316,7 @@
         if (status) status.textContent = label + ' demo playing';
       }).catch(function(){
         card.classList.remove('playing');
-        if (status) status.textContent = 'Add ' + src + ' to enable this demo.';
+        if (status) status.textContent = label + ' live demo number is coming soon.';
       });
     });
   });
@@ -345,7 +354,7 @@
   var states = [
     {
       word:'call.',
-      industry:'Healthcare',
+      industry:'Dental Clinics',
       page:0,
       accent:'#83d44f',
       light:'#dff7bd',
@@ -353,7 +362,7 @@
     },
     {
       word:'channel.',
-      industry:'Ecommerce',
+      industry:'Ask Trovi AI Anything',
       page:1,
       accent:'#4bcbbf',
       light:'#c9f5ee',
@@ -369,7 +378,7 @@
     },
     {
       word:'reservations.',
-      industry:'Real Estate',
+      industry:'Restaurants',
       page:1,
       accent:'#57a8ff',
       light:'#cfe9ff',
@@ -377,7 +386,7 @@
     },
     {
       word:'opportunity.',
-      industry:'Legal',
+      industry:'Auto Shop',
       page:1,
       accent:'#c98a42',
       light:'#ffe1b2',
@@ -452,7 +461,7 @@
 
     /*
      * Keep the matching card visible. Slide 0 contains the first three
-     * industries; slide 1 contains Real Estate, Legal and Ecommerce.
+     * industries; slide 1 contains Restaurants, Auto Shop and Ask Trovi AI Anything.
      */
     if (track){
       track.classList.toggle('show-second', state.page === 1);

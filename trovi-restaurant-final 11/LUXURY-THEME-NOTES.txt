@@ -1,0 +1,15 @@
+TROVI AI — MIDNIGHT LUXURY VERSION
+
+What changed
+- Existing layout, carousel behavior, copy and original six orb colours were preserved.
+- Added the supplied white Trovi AI logo throughout the navigation and footer.
+- Added a black, midnight-blue, champagne-gold and white luxury theme.
+- Added a reusable satin-style background and a separate luxury-theme.css file.
+
+Key new files
+- css/luxury-theme.css
+- assets/branding/luxury-satin-bg.svg
+- assets/branding/trovi-ai-logo-white.png
+
+Deployment
+Upload the contents of this folder to the same Vercel root directory currently used by the site, then redeploy and hard-refresh the browser.

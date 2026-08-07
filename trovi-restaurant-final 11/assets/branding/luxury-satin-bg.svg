@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1200" viewBox="0 0 1920 1200" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#01030a"/>
+      <stop offset="0.24" stop-color="#030817"/>
+      <stop offset="0.52" stop-color="#020611"/>
+      <stop offset="0.76" stop-color="#070b16"/>
+      <stop offset="1" stop-color="#01030a"/>
+    </linearGradient>
+
+    <linearGradient id="blueWide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#071127" stop-opacity="0"/>
+      <stop offset="0.16" stop-color="#17336f" stop-opacity="0.34"/>
+      <stop offset="0.38" stop-color="#2e5db7" stop-opacity="0.73"/>
+      <stop offset="0.53" stop-color="#5b8de5" stop-opacity="0.9"/>
+      <stop offset="0.66" stop-color="#19376f" stop-opacity="0.52"/>
+      <stop offset="0.84" stop-color="#061329" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#071127" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="blueEdge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6ca1ff" stop-opacity="0"/>
+      <stop offset="0.22" stop-color="#8eb8ff" stop-opacity="0.92"/>
+      <stop offset="0.52" stop-color="#4e82e5" stop-opacity="0.88"/>
+      <stop offset="0.82" stop-color="#94b8ff" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#6ca1ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="navyFold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b376f" stop-opacity="0.72"/>
+      <stop offset="0.42" stop-color="#081226" stop-opacity="0.18"/>
+      <stop offset="0.74" stop-color="#224c98" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#02050d" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7b4b09" stop-opacity="0"/>
+      <stop offset="0.16" stop-color="#c98a24" stop-opacity="0.5"/>
+      <stop offset="0.36" stop-color="#f9d77e" stop-opacity="1"/>
+      <stop offset="0.54" stop-color="#ffe9a8" stop-opacity="0.96"/>
+      <stop offset="0.76" stop-color="#d99b33" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#7b4b09" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="blueBloom" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#3d6ecf" stop-opacity="0.26"/>
+      <stop offset="0.45" stop-color="#173c86" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#09132c" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="goldBloom" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f6c45c" stop-opacity="0.18"/>
+      <stop offset="0.45" stop-color="#9a5c08" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#090501" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="blur110" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="110"/></filter>
+    <filter id="blur54" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="54"/></filter>
+    <filter id="blur24" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="24"/></filter>
+    <filter id="blur9" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="goldGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="blueGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="12" result="noise"/>
+      <feColorMatrix in="noise" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .055 0" result="grain"/>
+      <feBlend in="SourceGraphic" in2="grain" mode="soft-light"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1200" fill="url(#base)"/>
+
+  <!-- broad luminous blooms -->
+  <ellipse cx="350" cy="210" rx="680" ry="300" fill="url(#blueBloom)" filter="url(#blur110)"/>
+  <ellipse cx="1520" cy="260" rx="520" ry="280" fill="url(#blueBloom)" filter="url(#blur110)" opacity="0.72"/>
+  <ellipse cx="1070" cy="1090" rx="760" ry="350" fill="url(#blueBloom)" filter="url(#blur110)" opacity="0.48"/>
+  <ellipse cx="430" cy="1020" rx="430" ry="210" fill="url(#goldBloom)" filter="url(#blur54)" opacity="0.62"/>
+
+  <!-- top-left satin fold -->
+  <path d="M-260 360 C 120 15, 410 355, 790 85 C 1040 -95, 1300 30, 1550 160" fill="none" stroke="url(#blueWide)" stroke-width="230" stroke-linecap="round" filter="url(#blur54)" opacity="0.86"/>
+  <path d="M-260 340 C 120 18, 420 330, 800 72 C 1055 -102, 1310 25, 1565 150" fill="none" stroke="url(#blueEdge)" stroke-width="10" stroke-linecap="round" filter="url(#blueGlow)" opacity="0.92"/>
+  <path d="M-280 410 C 110 95, 420 420, 820 145 C 1080 -35, 1320 94, 1550 224" fill="none" stroke="#142a57" stroke-width="94" stroke-linecap="round" filter="url(#blur24)" opacity="0.62"/>
+
+  <!-- left-center deep satin curtain -->
+  <path d="M-180 655 C 150 375, 400 645, 720 530 C 1000 430, 1120 255, 1340 195" fill="none" stroke="url(#navyFold)" stroke-width="330" stroke-linecap="round" filter="url(#blur54)" opacity="0.9"/>
+  <path d="M-110 572 C 200 380, 430 610, 745 498" fill="none" stroke="url(#blueEdge)" stroke-width="5" stroke-linecap="round" filter="url(#blueGlow)" opacity="0.54"/>
+  <path d="M-130 720 C 140 500, 410 690, 742 580" fill="none" stroke="#244786" stroke-opacity="0.25" stroke-width="72" stroke-linecap="round" filter="url(#blur24)"/>
+
+  <!-- top-right sculpted fold and gold crest -->
+  <path d="M1210 -95 C 1460 65, 1490 295, 1715 388 C 1850 444, 1970 420, 2090 356" fill="none" stroke="#18366e" stroke-width="180" stroke-linecap="round" filter="url(#blur54)" opacity="0.55"/>
+  <path d="M1248 -40 C 1462 105, 1515 286, 1720 365 C 1855 418, 1980 392, 2080 330" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" filter="url(#goldGlow)" opacity="0.98"/>
+  <path d="M1248 -33 C 1464 110, 1518 290, 1725 370 C 1855 420, 1978 392, 2080 330" fill="none" stroke="#ffe9a5" stroke-width="1.25" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- central low fold -->
+  <path d="M430 1260 C 760 860, 1040 1020, 1280 785 C 1505 565, 1685 615, 2050 890" fill="none" stroke="#061126" stroke-width="360" stroke-linecap="round" filter="url(#blur54)" opacity="0.95"/>
+  <path d="M370 1225 C 720 865, 1030 980, 1270 760 C 1515 535, 1695 600, 2060 875" fill="none" stroke="url(#blueWide)" stroke-width="155" stroke-linecap="round" filter="url(#blur54)" opacity="0.48"/>
+  <path d="M300 1210 C 705 860, 1020 965, 1262 746 C 1510 525, 1700 588, 2065 872" fill="none" stroke="url(#gold)" stroke-width="4" stroke-linecap="round" filter="url(#goldGlow)" opacity="0.95"/>
+  <path d="M300 1210 C 705 860, 1020 965, 1262 746 C 1510 525, 1700 588, 2065 872" fill="none" stroke="#fff1bb" stroke-width="1.05" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- bottom-right velvet ridge -->
+  <path d="M760 1325 C 1100 1000, 1340 1230, 1620 1015 C 1770 900, 1920 860, 2070 905" fill="none" stroke="#16336c" stroke-width="230" stroke-linecap="round" filter="url(#blur54)" opacity="0.5"/>
+  <path d="M760 1288 C 1105 990, 1345 1200, 1625 995 C 1770 890, 1915 850, 2070 895" fill="none" stroke="url(#blueEdge)" stroke-width="5" stroke-linecap="round" filter="url(#blueGlow)" opacity="0.65"/>
+
+  <!-- fine satin ridges -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M-70 230 C 260 32, 470 285, 795 78" stroke="#82aaf6" stroke-width="1.6" stroke-opacity="0.32"/>
+    <path d="M-95 270 C 260 72, 488 320, 822 96" stroke="#5f8be2" stroke-width="1.2" stroke-opacity="0.2"/>
+    <path d="M70 870 C 400 650, 660 835, 965 710" stroke="#557cc7" stroke-width="1.35" stroke-opacity="0.18"/>
+    <path d="M1180 610 C 1450 485, 1620 555, 1945 720" stroke="#35588e" stroke-width="1.3" stroke-opacity="0.16"/>
+  </g>
+
+  <!-- very subtle texture -->
+  <rect width="1920" height="1200" fill="transparent" filter="url(#grain)" opacity="0.85"/>
+  <rect x="0.5" y="0.5" width="1919" height="1199" fill="none" stroke="#315ca8" stroke-opacity="0.08"/>
+</svg>

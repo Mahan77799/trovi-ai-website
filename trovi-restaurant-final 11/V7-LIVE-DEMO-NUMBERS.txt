@@ -1,0 +1,13 @@
+TROVI AI V7 LIVE DEMO NUMBERS
+
+Connected homepage demo cards:
+- Restaurants: +1 506-702-5391 (tel:+15067025391)
+- Salons: +1 249-402-7190 (tel:+12494027190)
+- Auto Shop: +1 219-259-5187 (tel:+12192595187)
+- Accounting: +1 506-808-2314 (tel:+15068082314)
+
+Still waiting for live demo numbers:
+- Dental Clinics
+- Ask Trovi AI Anything
+
+Behavior: clicking a connected demo card opens the device phone dialer to the live voice agent.
