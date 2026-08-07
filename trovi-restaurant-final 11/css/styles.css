@@ -2275,3 +2275,78 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;margin-top:20px}
     text-align:left!important;
   }
 }
+
+/* =====================================================================
+   MOBILE V13 — automatic centered words + compact proof counter
+   Desktop remains unchanged.
+   ===================================================================== */
+@media (max-width:720px){
+  /* Mobile does not use the moving orb. The word still changes automatically. */
+  .trovi-word-orb{display:none!important}
+  .trovi-word-line{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    min-width:0!important;
+    height:auto!important;
+    margin:0 auto!important;
+    text-align:center!important;
+    white-space:normal!important;
+    overflow:visible!important;
+  }
+  .trovi-word{
+    position:static!important;
+    display:block!important;
+    width:auto!important;
+    max-width:100%!important;
+    margin:0 auto!important;
+    text-align:center!important;
+    white-space:normal!important;
+    clip-path:none!important;
+    transform:none!important;
+  }
+
+  /* Proof counter sits directly below Book a demo, small and left aligned. */
+  .trovi-home-count{
+    width:100%!important;
+    max-width:460px!important;
+    margin:16px auto 0!important;
+    padding:0 18px!important;
+    display:grid!important;
+    grid-template-columns:12px auto!important;
+    grid-template-areas:"dot number" "dot label"!important;
+    column-gap:8px!important;
+    row-gap:1px!important;
+    justify-content:start!important;
+    align-items:center!important;
+    text-align:left!important;
+  }
+  .trovi-home-count .trovi-live-dot{
+    grid-area:dot!important;
+    width:10px!important;
+    height:10px!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:50%!important;
+    background:#65dff0!important;
+    box-shadow:0 0 9px rgba(101,223,240,.62)!important;
+    align-self:center!important;
+  }
+  .trovi-home-count .trovi-live-dot i{display:none!important}
+  .trovi-home-count strong{
+    grid-area:number!important;
+    font-size:18px!important;
+    line-height:1!important;
+    letter-spacing:-.025em!important;
+    text-align:left!important;
+  }
+  .trovi-home-count>span:last-child{
+    grid-area:label!important;
+    font-size:9.5px!important;
+    line-height:1.2!important;
+    white-space:nowrap!important;
+    opacity:.78!important;
+    text-align:left!important;
+  }
+}
