@@ -1930,3 +1930,164 @@
     margin-left:-30px;
   }
 }
+
+
+/* =====================================================================
+   MOBILE V12 — restaurant landing page rebuild
+   Mobile-only: desktop geometry and styling remain untouched.
+   ===================================================================== */
+@media (max-width:760px){
+  body.restaurant-page{overflow-x:hidden!important}
+  .restaurant-page .nav-wrap{position:sticky!important;top:0!important;z-index:100!important}
+  .restaurant-page .nav{
+    min-height:82px!important;
+    padding:0 16px!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:10px!important;
+  }
+  .restaurant-page .burger{
+    display:flex!important;
+    order:1!important;
+    position:static!important;
+    width:48px!important;
+    height:48px!important;
+    flex:0 0 48px!important;
+    border:1px solid rgba(243,206,120,.45)!important;
+    border-radius:12px!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  .restaurant-page .logo{order:2!important;margin:0!important;min-width:0!important;flex:0 0 auto!important}
+  .restaurant-page .logo-image{width:128px!important;max-height:36px!important}
+  .restaurant-page .nav-menu{display:none!important}
+  .restaurant-page .nav-actions{
+    order:3!important;
+    margin-left:auto!important;
+    display:flex!important;
+    gap:0!important;
+  }
+  .restaurant-page .nav-actions .btn--line{display:none!important}
+  .restaurant-page .nav-actions .btn--accent{
+    display:inline-flex!important;
+    height:46px!important;
+    padding:0 13px!important;
+    font-size:11px!important;
+    border-radius:11px!important;
+    white-space:nowrap!important;
+  }
+
+  .restaurant-page .rr-hero{min-height:auto!important;padding:0!important}
+  .restaurant-page .rr-shell{
+    width:100%!important;
+    max-width:460px!important;
+    margin:0 auto!important;
+    padding:30px 18px 42px!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:34px!important;
+  }
+  .restaurant-page .rr-hero-copy{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0 auto!important;
+    transform:none!important;
+    text-align:center!important;
+  }
+  .restaurant-page .rr-pill{
+    width:max-content!important;
+    max-width:100%!important;
+    margin:0 auto 18px!important;
+    padding:9px 13px!important;
+    font-size:9.5px!important;
+  }
+  .restaurant-page .rr-rotating-title{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0 auto 20px!important;
+    text-align:center!important;
+    font-size:clamp(40px,11vw,50px)!important;
+    line-height:.98!important;
+  }
+  .restaurant-page .rr-title-fixed,.restaurant-page .rr-rotating-word{text-align:center!important}
+  .restaurant-page .rr-rotating-word{min-height:1.08em!important}
+  .restaurant-page .rr-hero-copy>p{
+    max-width:390px!important;
+    margin:0 auto!important;
+    font-size:15.5px!important;
+    line-height:1.55!important;
+    text-align:center!important;
+  }
+  .restaurant-page .rr-launch--featured{
+    width:max-content!important;
+    max-width:100%!important;
+    margin:18px auto 0!important;
+    padding:9px 12px!important;
+    font-size:11px!important;
+  }
+  .restaurant-page .rr-hero-actions{
+    width:100%!important;
+    max-width:360px!important;
+    margin:18px auto 0!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:10px!important;
+  }
+  .restaurant-page .rr-hero-actions .rr-btn{
+    width:100%!important;
+    min-width:0!important;
+    height:50px!important;
+    padding:0 10px!important;
+    font-size:12.5px!important;
+    border-radius:11px!important;
+    justify-content:center!important;
+  }
+  .restaurant-page .rr-hero-actions .rr-btn-icon{width:18px!important;height:18px!important}
+
+  .restaurant-page .rr-live-demo{
+    width:100%!important;
+    max-width:340px!important;
+    min-height:0!important;
+    margin:0 auto!important;
+    transform:none!important;
+    justify-self:center!important;
+  }
+  .restaurant-page .rr-live-demo-head--single{
+    width:100%!important;
+    margin:0 auto 10px!important;
+    padding:0!important;
+  }
+  .restaurant-page .rr-agent-card--single{
+    width:100%!important;
+    height:430px!important;
+    min-height:430px!important;
+    margin:0 auto!important;
+    padding:28px 18px 22px!important;
+    border-radius:24px!important;
+  }
+  .restaurant-page .rr-agent-card--single .rr-agent-orb{
+    width:200px!important;
+    height:200px!important;
+    margin:0 auto!important;
+  }
+  .restaurant-page .rr-agent-card--single .rr-agent-orb button{
+    width:58px!important;
+    height:58px!important;
+  }
+  .restaurant-page .rr-card-label{margin-top:20px!important;text-align:center!important}
+  .restaurant-page .rr-card-label h3{font-size:25px!important;margin-top:7px!important}
+
+  /* Every following restaurant section gets comfortable mobile spacing. */
+  .restaurant-page .rr-wrap{width:calc(100% - 32px)!important;max-width:440px!important;margin-left:auto!important;margin-right:auto!important}
+  .restaurant-page .rr-section-head,.restaurant-page .rr-dashboard-head,.restaurant-page .rr-pressure-copy,.restaurant-page .rr-pilot-copy,.restaurant-page .rr-faq-grid>div:first-child{text-align:center!important}
+  .restaurant-page .rr-section-head h2,.restaurant-page .rr-dashboard-head h2,.restaurant-page .rr-pressure-copy h2,.restaurant-page .rr-pilot-copy h2,.restaurant-page .rr-faq-grid h2{font-size:clamp(30px,8vw,40px)!important;line-height:1.05!important}
+}
+
+@media (max-width:390px){
+  .restaurant-page .logo-image{width:112px!important}
+  .restaurant-page .nav-actions .btn--accent{font-size:10px!important;padding:0 10px!important}
+  .restaurant-page .rr-shell{padding-left:14px!important;padding-right:14px!important}
+  .restaurant-page .rr-hero-actions{grid-template-columns:1fr!important;max-width:310px!important}
+  .restaurant-page .rr-agent-card--single{height:405px!important;min-height:405px!important}
+  .restaurant-page .rr-agent-card--single .rr-agent-orb{width:184px!important;height:184px!important}
+}

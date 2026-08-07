@@ -442,7 +442,22 @@
     return Math.ceil(word.getBoundingClientRect().width);
   }
 
+  function mobileWordOffset(){
+    if (window.matchMedia && window.matchMedia('(max-width: 720px)').matches){
+      return Math.max(0, Math.round((line.clientWidth - wordWidth()) / 2));
+    }
+    return 0;
+  }
+
+  function centerMobileWord(){
+    var offset = mobileWordOffset();
+    word.style.left = offset + 'px';
+    orb.style.left = offset + 'px';
+    return offset;
+  }
+
   function placeOrbAtWordEnd(){
+    centerMobileWord();
     orb.style.transform =
       'translate3d(' + (wordWidth() + gap) + 'px,-45%,0)';
   }
@@ -485,6 +500,7 @@
     while (document.body.contains(line)){
       await wait(pauseTime);
 
+      centerMobileWord();
       var currentWidth = wordWidth();
 
       await Promise.all([
@@ -517,7 +533,6 @@
 
       word.textContent = nextState.word;
       word.style.clipPath = 'inset(0 100% 0 0)';
-      orb.style.transform = 'translate3d(0px,-45%,0)';
       applyState(nextState);
 
       await new Promise(function(resolve){
@@ -526,6 +541,8 @@
         });
       });
 
+      centerMobileWord();
+      orb.style.transform = 'translate3d(0px,-45%,0)';
       var nextWidth = wordWidth();
 
       await Promise.all([

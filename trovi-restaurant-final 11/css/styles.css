@@ -2230,3 +2230,48 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;margin-top:20px}
 
 /* v24: remove decorative strings/routes attached to homepage orbs */
 .signal-card .signal-route{display:none!important;}
+
+
+/* =====================================================================
+   MOBILE V12 — exact centered rotating words + compact live counter
+   Desktop remains unchanged.
+   ===================================================================== */
+@media (max-width:720px){
+  html,body{max-width:100%;overflow-x:hidden!important}
+  .trovi-home-copy{width:100%!important;max-width:none!important;text-align:center!important}
+  .trovi-home-copy h1{width:100%!important;max-width:100%!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+  .trovi-word-line{
+    display:block!important;
+    position:relative!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    margin:0 auto!important;
+    text-align:center!important;
+    overflow:visible!important;
+  }
+  .trovi-word{left:0;top:0}
+  .trovi-word-orb{left:0}
+
+  /* Keep the running proof counter small and intentionally left aligned. */
+  .trovi-home-count{
+    width:auto!important;
+    max-width:300px!important;
+    margin:34px 0 0 18px!important;
+    grid-template-columns:34px auto!important;
+    grid-template-areas:"dot number" "dot label"!important;
+    column-gap:10px!important;
+    row-gap:2px!important;
+    justify-content:start!important;
+    text-align:left!important;
+  }
+  .trovi-home-count .trovi-live-dot{grid-area:dot;width:34px!important;height:34px!important;align-self:center!important}
+  .trovi-home-count strong{grid-area:number;font-size:26px!important;line-height:1!important;letter-spacing:-.035em!important;text-align:left!important}
+  .trovi-home-count>span:last-child{
+    grid-area:label;
+    font-size:11.5px!important;
+    line-height:1.25!important;
+    white-space:nowrap!important;
+    text-align:left!important;
+  }
+}
