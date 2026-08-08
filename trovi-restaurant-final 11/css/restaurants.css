@@ -2151,3 +2151,28 @@
   .restaurant-page .rr-hero-actions{margin-top:12px!important;order:5!important}
   .restaurant-page .rr-hero-actions .rr-btn{height:46px!important;font-size:11.5px!important}
 }
+
+/* =====================================================================
+   RESTAURANT MOBILE V14 — remove unwanted halo/ring around live demo orb
+   Mobile-only. Keeps the blue liquid orb and play button, removes the
+   extra grey circular treatment around it.
+   ===================================================================== */
+@media (max-width:720px){
+  .restaurant-page .rr-agent-card--single .rr-agent-orb{
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+    outline:0!important;
+    overflow:visible!important;
+  }
+  .restaurant-page .rr-agent-card--single .rr-agent-orb>span,
+  .restaurant-page .rr-agent-card--single .rr-agent-orb .rr-orb-media{
+    border:0!important;
+    box-shadow:none!important;
+    outline:0!important;
+  }
+  .restaurant-page .rr-agent-card--single .rr-agent-orb::before,
+  .restaurant-page .rr-agent-card--single .rr-agent-orb::after{
+    display:none!important;
+  }
+}
