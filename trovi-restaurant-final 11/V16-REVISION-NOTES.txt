@@ -1,0 +1,8 @@
+Trovi AI V16 revisions
+
+1. Demo card order updated for both desktop and mobile:
+   Slide / sequence 1: Ask Trovi AI Anything, Dental Clinics, Restaurants
+   Slide / sequence 2: Accounting, Auto Shop, Salons
+2. Stats heading restored to: Real shops. Real numbers.
+3. Featured customer story section (Real owners. Real growth.) removed from the homepage for both desktop and mobile.
+   This can be restored later if needed.

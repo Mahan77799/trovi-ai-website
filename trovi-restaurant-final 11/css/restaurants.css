@@ -2176,3 +2176,27 @@
     display:none!important;
   }
 }
+
+/* =====================================================================
+   V17 — remove unwanted halo / bubble around restaurant hero orb
+   Applies to both desktop and mobile.
+   ===================================================================== */
+.restaurant-page .rr-agent-card--single .rr-agent-orb{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  outline:0!important;
+  overflow:visible!important;
+}
+
+.restaurant-page .rr-agent-card--single .rr-agent-orb > span,
+.restaurant-page .rr-agent-card--single .rr-agent-orb .rr-orb-media{
+  border:0!important;
+  box-shadow:none!important;
+  outline:0!important;
+}
+
+.restaurant-page .rr-agent-card--single .rr-agent-orb::before,
+.restaurant-page .rr-agent-card--single .rr-agent-orb::after{
+  display:none!important;
+}

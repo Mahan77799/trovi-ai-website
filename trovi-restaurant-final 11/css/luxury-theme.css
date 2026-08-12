@@ -562,3 +562,21 @@ body.luxury-theme.restaurant-page .rr-btn--light{
     min-height:0;
   }
 }
+
+
+/* V15: desktop + mobile refinements */
+body.luxury-theme .stat-impact-title{
+  color:#f3ce78!important;
+  text-shadow:0 0 22px rgba(217,170,73,.12);
+}
+body.luxury-theme.restaurant-page .rr-agent-card--single{
+  background:linear-gradient(155deg,rgba(7,14,29,.98),rgba(2,6,15,.99))!important;
+  border-color:rgba(243,206,120,.38)!important;
+  box-shadow:0 28px 64px rgba(0,0,0,.38)!important;
+  color:#fff!important;
+}
+body.luxury-theme.restaurant-page .rr-agent-card--single::after{
+  background:linear-gradient(115deg,transparent 24%,rgba(255,255,255,.07) 45%,transparent 66%)!important;
+}
+body.luxury-theme.restaurant-page .rr-agent-card--single .rr-card-label span{color:#c5cede!important;}
+body.luxury-theme.restaurant-page .rr-agent-card--single .rr-card-label h3{color:#fff!important;}

@@ -1,0 +1,5 @@
+V18 update
+- Restored the owner review/testimonial carousel on desktop and mobile.
+- Removed the "Toronto Restaurant" label and Toronto-specific attribution.
+- Used "Restaurant Client" / "Owner, independent restaurant" as a non-location-specific placeholder until a verified restaurant name is supplied.
+- Kept the V17 orb-halo removal intact for both desktop and mobile.

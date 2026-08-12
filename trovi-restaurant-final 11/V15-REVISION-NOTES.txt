@@ -1,0 +1,7 @@
+Trovi AI V15 revisions
+- Stats reordered: 100%, 74%, 18%, Toronto barbershop 27.
+- Stats heading changed to "The impact so far." and styled gold.
+- Homepage demo order changed to: Ask Trovi AI Anything, Dental Clinics, Restaurants, then Accounting, Salons, Auto Shop.
+- Mobile inherits the same single-card order.
+- Restaurant live demo card is dark on desktop and mobile.
+- Testimonials/review carousel temporarily removed and saved in V15-HIDDEN-REVIEWS.txt for later restoration.
