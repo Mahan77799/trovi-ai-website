@@ -252,47 +252,55 @@
 
 /* =========================================================
    Trovi Signal Deck carousel and audio
+   Desktop: 3 visible cards with the center card featured.
+   Mobile: handled separately by mobile-home-v11.js.
    ========================================================= */
 (function(){
   var track = document.getElementById('signalTrack');
   var prev = document.getElementById('signalPrev');
   var next = document.getElementById('signalNext');
-  var dots = document.querySelectorAll('.signal-dots i');
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.signal-dots i'));
   var audio = document.getElementById('signalAudio');
   var status = document.getElementById('signalStatus');
-  var cards = Array.prototype.slice.call(document.querySelectorAll('[data-signal-card]'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.trovi-demo-panel [data-signal-card]'));
   if (!track || !cards.length) return;
 
-  var page = 0;
+  var desktop = window.matchMedia && window.matchMedia('(min-width: 1041px)').matches;
+  var active = cards.length > 1 ? 1 : 0; // starts: Restaurants | Dental (featured) | Accounting
 
-  function renderPage(){
-    track.classList.toggle('show-second', page === 1);
-    dots.forEach(function(dot,index){
-      dot.classList.toggle('active', index === page);
+  function renderDesktop(){
+    if (!desktop) return;
+    cards.forEach(function(card,index){
+      card.classList.remove('desktop-left','desktop-center','desktop-right','desktop-hidden');
+      var left = (active - 1 + cards.length) % cards.length;
+      var right = (active + 1) % cards.length;
+      if (index === active) card.classList.add('desktop-center');
+      else if (index === left) card.classList.add('desktop-left');
+      else if (index === right) card.classList.add('desktop-right');
+      else card.classList.add('desktop-hidden');
     });
+    dots.forEach(function(dot,index){ dot.classList.toggle('active', index === active); });
   }
 
-  if (prev) prev.addEventListener('click', function(){
-    page = page === 0 ? 1 : 0;
-    renderPage();
-  });
+  function step(direction){
+    if (!desktop) return;
+    active = (active + direction + cards.length) % cards.length;
+    renderDesktop();
+  }
 
-  if (next) next.addEventListener('click', function(){
-    page = page === 0 ? 1 : 0;
-    renderPage();
-  });
+  if (prev) prev.addEventListener('click', function(){ step(-1); });
+  if (next) next.addEventListener('click', function(){ step(1); });
 
-  cards.forEach(function(card){
+  cards.forEach(function(card,index){
     card.addEventListener('click', function(){
+      if (desktop && index !== active){ active = index; renderDesktop(); return; }
+
       var src = card.getAttribute('data-audio');
       var phone = (card.getAttribute('data-phone') || '').trim();
       var label = card.getAttribute('data-label') || 'Industry';
 
-      cards.forEach(function(other){
-        if (other !== card) other.classList.remove('playing');
-      });
+      cards.forEach(function(other){ if (other !== card) other.classList.remove('playing'); });
 
-      /* A real demo number takes priority over prerecorded audio. */
       if (phone){
         var cleanPhone = phone.replace(/[^+\d]/g, '');
         if (status) status.textContent = 'Opening the ' + label + ' live demo line…';
@@ -301,16 +309,12 @@
       }
 
       if (!audio) return;
-
       if (card.classList.contains('playing') && !audio.paused){
-        audio.pause();
-        card.classList.remove('playing');
+        audio.pause(); card.classList.remove('playing');
         if (status) status.textContent = label + ' demo paused';
         return;
       }
-
-      audio.pause();
-      audio.src = src;
+      audio.pause(); audio.src = src;
       audio.play().then(function(){
         card.classList.add('playing');
         if (status) status.textContent = label + ' demo playing';
@@ -328,7 +332,7 @@
     });
   }
 
-  renderPage();
+  renderDesktop();
 })();
 
 
@@ -474,19 +478,6 @@
       card.classList.toggle('is-word-active', matches);
     });
 
-    /*
-     * Keep the matching card visible. Slide 0 contains the first three
-     * industries; slide 1 contains Restaurants, Auto Shop and Ask Trovi AI Anything.
-     */
-    if (track){
-      track.classList.toggle('show-second', state.page === 1);
-    }
-
-    if (dots.length){
-      dots.forEach(function(dot,dotIndex){
-        dot.classList.toggle('active', dotIndex === state.page);
-      });
-    }
   }
 
   applyState(states[index]);

@@ -2350,3 +2350,111 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;margin-top:20px}
     text-align:left!important;
   }
 }
+
+/* V23: four active homepage demos = two balanced cards per desktop slide. */
+@media (min-width:721px){
+  .signal-slide{grid-template-columns:repeat(2,minmax(0,430px));justify-content:center;gap:28px;padding-left:20px;padding-right:20px}
+}
+
+
+/* =====================================================================
+   V25 DESKTOP INDUSTRY CAROUSEL — 3 visible cards, center card featured
+   Mobile remains one-card-at-a-time through mobile-home-v11.
+   ===================================================================== */
+@media (min-width:1041px){
+  .trovi-demo-panel.signal-deck{
+    overflow:visible;
+  }
+  .signal-viewport{
+    position:relative;
+    height:414px;
+    overflow:visible;
+    padding:4px 0 8px;
+  }
+  .signal-track{
+    position:relative;
+    width:100%!important;
+    height:100%;
+    display:block;
+    transform:none!important;
+    transition:none!important;
+    overflow:visible;
+  }
+  .signal-slide{
+    display:contents!important;
+    width:auto!important;
+    flex:none!important;
+    padding:0!important;
+  }
+  .signal-card{
+    position:absolute;
+    top:16px;
+    left:50%;
+    width:min(30.5%,300px)!important;
+    height:360px!important;
+    padding:22px 18px 20px!important;
+    margin:0!important;
+    opacity:0;
+    pointer-events:none;
+    z-index:0;
+    transform:translateX(-50%) scale(.82);
+    transition:left .52s cubic-bezier(.22,.72,.18,1),transform .52s cubic-bezier(.22,.72,.18,1),opacity .35s ease,filter .35s ease,box-shadow .35s ease;
+  }
+  .signal-card.desktop-left,
+  .signal-card.desktop-right,
+  .signal-card.desktop-center{
+    opacity:1;
+    pointer-events:auto;
+  }
+  .signal-card.desktop-left{
+    left:17%;
+    z-index:1;
+    transform:translateX(-50%) scale(.88);
+    filter:saturate(.88) brightness(.94);
+  }
+  .signal-card.desktop-center{
+    left:50%;
+    z-index:3;
+    transform:translateX(-50%) scale(1.02);
+    filter:none;
+    box-shadow:0 28px 58px rgba(0,0,0,.22),0 0 32px color-mix(in srgb,var(--tone) 18%,transparent)!important;
+  }
+  .signal-card.desktop-right{
+    left:83%;
+    z-index:1;
+    transform:translateX(-50%) scale(.88);
+    filter:saturate(.88) brightness(.94);
+  }
+  .signal-card.desktop-hidden{
+    left:50%;
+    opacity:0;
+    transform:translateX(-50%) scale(.72);
+    pointer-events:none;
+  }
+  .signal-card .signal-orb{
+    width:118px;
+    height:118px;
+    flex-basis:118px;
+    margin-top:12px;
+  }
+  .signal-card-title{
+    margin-top:18px;
+    font-size:20px;
+  }
+  .signal-card-copy{
+    min-height:42px;
+    margin-top:8px;
+    font-size:13.5px;
+  }
+  .signal-player{
+    grid-template-columns:42px minmax(0,1fr);
+    gap:10px;
+  }
+  .signal-play{
+    width:42px;
+    height:42px;
+  }
+  .signal-wave{height:34px}
+  .signal-controls{margin-top:8px}
+  .signal-dots{margin-top:10px}
+}
