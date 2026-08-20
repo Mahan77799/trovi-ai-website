@@ -42,7 +42,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="../css/site-polish-v26.css?v=1">
+<link rel="stylesheet" href="../css/site-polish-v26.css?v=28">
 </head>
 <body class="restaurant-page luxury-theme">
 
@@ -51,19 +51,19 @@
     <li class="has-dd"><button class="nav-link" type="button">Platform <svg class="caret" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="dd"><a href="../platform/technology.html">How Trovi works</a><a href="../platform/integrations.html">Integrations</a><a href="../platform/security-compliance.html">Security &amp; privacy</a><a href="../platform/analytics-insights.html">Analytics &amp; insights</a></div></li>
     <li class="has-dd"><button class="nav-link" type="button">Solutions <svg class="caret" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="dd"><a href="../solutions/restaurants.html">Restaurants</a><a href="../solutions/salons.html">Salons</a><a href="../solutions/dental-clinics.html">Dental Clinics</a><a href="../solutions/tax-accounting.html">Accounting firms</a></div></li>
+      <div class="dd"><a href="../solutions/restaurants.html">Restaurants</a><a href="../solutions/dental-clinics.html">Dental Clinics</a><a href="../solutions/tax-accounting.html">Accounting Firm</a><a href="../solutions/salons.html">Salons</a></div></li>
     <li class="has-dd"><button class="nav-link" type="button">Company <svg class="caret" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="dd"><a href="../resources/about.html">About Trovi</a><a href="../resources/contact.html">Contact</a></div></li>
     <li><a class="nav-link" href="../pricing.html">Pricing</a></li>
   </ul>
-  <div class="nav-actions"><a class="btn btn--line btn--sm" href="#restaurant-demo">Hear a demo</a><a class="btn btn--accent btn--sm" href="../resources/contact.html">Start for free today <span class="cta-arrow">→</span></a></div>
+  <div class="nav-actions"><a class="btn btn--line btn--sm" href="#restaurant-demo">Hear a demo</a><a class="btn btn--accent btn--sm" href="../resources/contact.html?intent=start">Start for free today <span class="cta-arrow">→</span></a></div>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
 </nav></header>
 <div class="m-nav" id="mnav">
   <h5>Platform</h5><a href="../platform/technology.html">How Trovi works</a><a href="../platform/integrations.html">Integrations</a><a href="../platform/security-compliance.html">Security &amp; privacy</a><a href="../platform/analytics-insights.html">Analytics &amp; insights</a>
-  <h5>Solutions</h5><a href="../solutions/restaurants.html">Restaurants</a><a href="../solutions/salons.html">Salons</a><a href="../solutions/dental-clinics.html">Dental Clinics</a><a href="../solutions/tax-accounting.html">Accounting firms</a>
+  <h5>Solutions</h5><a href="../solutions/restaurants.html">Restaurants</a><a href="../solutions/dental-clinics.html">Dental Clinics</a><a href="../solutions/tax-accounting.html">Accounting Firm</a><a href="../solutions/salons.html">Salons</a>
   <h5>Company</h5><a href="../resources/about.html">About Trovi</a><a href="../resources/contact.html">Contact</a><a href="../pricing.html">Pricing</a>
-  <div class="m-ctas"><a class="btn btn--line" href="#restaurant-demo">Hear a demo</a><a class="btn btn--accent" href="../resources/contact.html">Start for free today</a></div>
+  <div class="m-ctas"><a class="btn btn--line" href="#restaurant-demo">Hear a demo</a><a class="btn btn--accent" href="../resources/contact.html?intent=start">Start for free today</a></div>
 </div>
 <main>
   <section class="rr-hero" id="restaurant-demo">
@@ -78,12 +78,12 @@
         <p>Trovi answers calls 24/7, manages reservations, takes takeout orders, texts guests and transfers urgent calls to your team.</p>
         <div class="rr-launch rr-launch--featured"><i></i><span>join the restaurants already using Trovi AI</span></div>
         <div class="rr-hero-actions">
-          <a class="rr-btn rr-btn--dark" href="../resources/contact.html?interest=restaurant-pilot"><span class="rr-btn-icon" aria-hidden="true">↗</span>Start for free today</a>
+          <a class="rr-btn rr-btn--dark" href="../resources/contact.html?intent=start&industry=restaurant"><span class="rr-btn-icon" aria-hidden="true">↗</span>Start for free today</a>
           <button class="rr-btn rr-btn--light" type="button" data-rr-demo-focus><span class="rr-btn-icon" aria-hidden="true">☎</span>Hear a demo</button>
         </div>
       </div>
 
-      <div class="rr-live-demo" id="rrLiveDemo" data-phone="+15067025391" aria-label="Test Trovi's live restaurant receptionist">
+      <div class="rr-live-demo" id="rrLiveDemo" data-web-demo="restaurant" aria-label="Test Trovi's live restaurant receptionist">
         <div class="rr-live-demo-head rr-live-demo-head--single">
           <div><i></i><span>Live restaurant agent</span></div>
         </div>
@@ -92,7 +92,7 @@
           <article class="rr-agent-card rr-agent-card--single is-active" data-rr-agent="0">
             <div class="rr-agent-orb rr-agent-orb--ocean">
               <span class="rr-orb-media" aria-hidden="true"></span>
-              <button type="button" data-rr-call aria-label="Call the live Trovi restaurant demo"><b aria-hidden="true">▶</b></button>
+              <button type="button" data-rr-call data-web-demo="restaurant" aria-label="Open the live Trovi restaurant browser demo"><b aria-hidden="true">▶</b></button>
             </div>
             <div class="rr-card-label">
               <span>TROVI AI</span>
@@ -192,7 +192,7 @@
 
   <section class="rr-pilot">
     <div class="rr-wrap"><div class="rr-pilot-card">
-      <div class="rr-pilot-copy"><span class="rr-kicker">Ontario restaurant pilot</span><h2>See what your restaurant phone could be doing for you.</h2><p>Start with a free pilot configured around your actual menu, booking rules, and call flow. Hear it work before choosing a monthly plan.</p><div class="rr-pilot-actions"><a class="rr-btn rr-btn--dark" href="../resources/contact.html?interest=restaurant-pilot">Apply for the free pilot <span>→</span></a><span>Founder-led setup · No long-term commitment during the pilot</span></div></div>
+      <div class="rr-pilot-copy"><span class="rr-kicker">Ontario restaurant pilot</span><h2>See what your restaurant phone could be doing for you.</h2><p>Start with a free pilot configured around your actual menu, booking rules, and call flow. Hear it work before choosing a monthly plan.</p><div class="rr-pilot-actions"><a class="rr-btn rr-btn--dark" href="../resources/contact.html?intent=start&industry=restaurant">Apply for the free pilot <span>→</span></a><span>Founder-led setup · No long-term commitment during the pilot</span></div></div>
       <div class="rr-pilot-visual"><div class="rr-queue-label"><i></i>Trovi answering now</div><div class="rr-queue-item"><span>1</span><div><strong>Table for four</strong><small>Reservation created</small></div><b>✓</b></div><div class="rr-queue-item"><span>2</span><div><strong>Takeout pickup</strong><small>Order sent to team</small></div><b>✓</b></div><div class="rr-queue-item"><span>3</span><div><strong>Private event</strong><small>Lead transferred</small></div><b>↗</b></div></div>
     </div></div>
   </section>
@@ -211,7 +211,7 @@
 <footer><div class="wrap"><div class="f-grid">
     <div class="f-brand"><a class="logo" href="../index.html"><img class="logo-image" src="../assets/branding/trovi-ai-logo-white.png" alt="Trovi AI"></a></div>
     <div><h5>Platform</h5><a href="../platform/technology.html">How Trovi works</a><a href="../platform/integrations.html">Integrations</a><a href="../platform/security-compliance.html">Security &amp; privacy</a><a href="../platform/analytics-insights.html">Analytics &amp; insights</a></div>
-    <div><h5>Solutions</h5><a href="../solutions/restaurants.html">Restaurants</a><a href="../solutions/salons.html">Salons</a><a href="../solutions/dental-clinics.html">Dental Clinics</a><a href="../solutions/tax-accounting.html">Accounting firms</a></div>
+    <div><h5>Solutions</h5><a href="../solutions/restaurants.html">Restaurants</a><a href="../solutions/dental-clinics.html">Dental Clinics</a><a href="../solutions/tax-accounting.html">Accounting Firm</a><a href="../solutions/salons.html">Salons</a></div>
     <div><h5>Company</h5><a href="../resources/about.html">About Trovi</a><a href="../resources/contact.html">Contact</a><a href="../pricing.html">Pricing</a></div>
   </div><div class="f-bottom"><span>&copy; <span id="year">2026</span> Trovi AI · Toronto, ON</span><span><a href="../platform/security-compliance.html">Privacy &amp; security</a></span></div></div></footer>
 
@@ -219,5 +219,5 @@
 <!-- The exact approved orb image remains underneath as an instant fallback. -->
 <script src="../js/restaurants.js"></script>
 <script src="../js/mobile-restaurant-v13.js?v=13"></script>
-</body>
+<script src="../js/retell-web-demo-v28.js?v=28"></script></body>
 </html>

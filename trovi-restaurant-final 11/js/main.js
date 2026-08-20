@@ -296,6 +296,11 @@
       if (desktop && index !== active){ active = index; renderDesktop(); return; }
 
       var src = card.getAttribute('data-audio');
+      var webDemo = (card.getAttribute('data-web-demo') || '').trim();
+      if (webDemo && window.openTroviBrowserDemo){
+        window.openTroviBrowserDemo(webDemo);
+        return;
+      }
       var phone = (card.getAttribute('data-phone') || '').trim();
       var label = card.getAttribute('data-label') || 'Industry';
 

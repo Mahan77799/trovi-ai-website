@@ -80,10 +80,12 @@
 
   function startLiveCall(){
     if(!liveDemo)return;
+    var webDemo=(liveDemo.getAttribute('data-web-demo')||'').trim();
+    if(webDemo && window.openTroviBrowserDemo){ window.openTroviBrowserDemo(webDemo); return; }
     var phone=(liveDemo.getAttribute('data-phone')||'').trim();
     if(!phone){
       if(callNote){
-        callNote.textContent='The live demo is ready—add your Trovi phone number to connect this button.';
+        callNote.textContent='The browser demo needs its widget connection before launch.';
         callNote.classList.add('is-visible');
         window.setTimeout(function(){callNote.classList.remove('is-visible');},4200);
       }

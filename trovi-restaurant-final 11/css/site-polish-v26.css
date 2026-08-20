@@ -194,3 +194,84 @@ body.core-page main{overflow:hidden}
   .core-cta{padding:56px 0 74px}.core-cta-card{padding:32px 18px}.core-cta-card h2{font-size:clamp(34px,9.6vw,44px)}
   .demo-contact{padding:16px}.demo-contact img{width:58px;height:58px}
 }
+
+/* ==================== V27 ==================== */
+@media (min-width:1041px){
+  body.luxury-theme:not(.core-page):not(.industry-page):not(.restaurant-page) .trovi-home-copy{transform:translateX(66px)!important}
+}
+
+/* Smaller, cleaner mobile headers on industry landing pages. */
+@media (max-width:720px){
+  body.restaurant-page .nav,
+  body.industry-page .nav{
+    height:60px!important;
+    padding:0 10px!important;
+    display:grid!important;
+    grid-template-columns:30px 96px minmax(0,1fr)!important;
+    gap:8px!important;
+    align-items:center!important;
+  }
+  body.restaurant-page .nav-wrap,
+  body.industry-page .nav-wrap{min-height:60px!important}
+  body.restaurant-page .burger,
+  body.industry-page .burger{
+    grid-column:1!important;order:1!important;width:30px!important;height:30px!important;
+    border-radius:8px!important;margin:0!important;padding:0!important;justify-self:start!important;
+  }
+  body.restaurant-page .burger span,
+  body.industry-page .burger span{width:15px!important;height:1.5px!important}
+  body.restaurant-page .logo,
+  body.industry-page .logo{grid-column:2!important;order:2!important;justify-self:start!important;min-width:0!important}
+  body.restaurant-page .logo-image,
+  body.industry-page .logo-image{width:94px!important;max-height:29px!important}
+  body.restaurant-page .nav-actions,
+  body.industry-page .nav-actions{grid-column:3!important;order:3!important;display:flex!important;justify-self:end!important;margin:0!important}
+  body.restaurant-page .nav-actions .btn--line,
+  body.industry-page .nav-actions .btn--line{display:none!important}
+  body.restaurant-page .nav-actions .btn--accent,
+  body.industry-page .nav-actions .btn--accent{
+    display:flex!important;height:30px!important;min-height:30px!important;min-width:0!important;
+    padding:0 9px!important;font-size:9.2px!important;border-radius:8px!important;white-space:nowrap!important;
+  }
+  body.restaurant-page .nav-actions .cta-arrow,
+  body.industry-page .nav-actions .cta-arrow{font-size:14px!important;margin-left:5px!important}
+  body.restaurant-page .m-nav,
+  body.industry-page .m-nav{top:60px!important;height:calc(100dvh - 60px)!important}
+}
+
+/* Browser demo modal. */
+.browser-demo-modal{position:fixed;inset:0;z-index:5000;display:none;place-items:center;padding:18px}.browser-demo-modal.is-open{display:grid}.browser-demo-backdrop{position:absolute;inset:0;background:rgba(0,3,10,.82);backdrop-filter:blur(14px)}.browser-demo-shell{position:relative;width:min(520px,100%);min-height:460px;border:1px solid rgba(243,206,120,.34);border-radius:26px;background:#050812;box-shadow:0 36px 110px rgba(0,0,0,.55);padding:22px;overflow:hidden}.browser-demo-close{position:absolute;right:15px;top:12px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(243,206,120,.25);color:#fff;background:#090e19;font-size:23px;z-index:4}.browser-demo-status{display:flex;align-items:center;gap:9px;color:#f3ce78;font-size:10px;letter-spacing:.14em;font-weight:800}.browser-demo-status i{width:7px;height:7px;border-radius:50%;background:#69df5d;box-shadow:0 0 0 5px rgba(105,223,93,.1)}.browser-demo-body{min-height:390px;display:grid;place-items:center}.browser-demo-body iframe{width:100%;height:390px;border:0;border-radius:18px;background:#050812}.browser-demo-pending{text-align:center;max-width:360px}.pending-orb{width:88px;height:88px;border-radius:50%;margin:0 auto 22px;background:radial-gradient(circle at 38% 30%,#fff 0 5%,#86b6ff 18%,#224fa7 48%,#081020 72%);box-shadow:0 0 44px rgba(88,137,255,.25)}.browser-demo-pending h3{font-size:25px;margin-bottom:10px}.browser-demo-pending p{color:#b7c0d1;line-height:1.55}.browser-demo-pending small{display:block;color:#f3ce78;margin-top:12px;line-height:1.45}
+
+/* How Trovi Works v27 */
+.tech-map{min-height:470px}.tech-route{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1.1fr;align-items:center;gap:8px;margin-top:38px}.tech-node{padding:18px 14px;border:1px solid rgba(181,199,255,.15);border-radius:17px;background:rgba(2,7,16,.82);min-height:112px}.tech-node small{display:block;color:#8290a7;font-size:9px;letter-spacing:.12em}.tech-node strong{display:block;font-size:13px;margin-top:18px;line-height:1.35}.tech-node.is-hot{box-shadow:inset 0 0 0 1px rgba(94,144,255,.16),0 0 34px rgba(57,109,255,.09)}.tech-node.is-gold{border-color:rgba(243,206,120,.35);background:linear-gradient(145deg,rgba(39,29,8,.75),rgba(3,7,16,.94))}.tech-arrow{color:#f3ce78;font-size:18px}.tech-outcome{margin-top:22px;padding:16px;border-radius:15px;border:1px solid rgba(181,199,255,.12);background:rgba(3,8,18,.72);display:flex;gap:12px;align-items:center}.tech-outcome i{width:10px;height:10px;border-radius:50%;background:#6ee25e;box-shadow:0 0 0 6px rgba(110,226,94,.08)}.tech-outcome strong{font-size:13px}.tech-outcome span{display:block;color:#8f9bae;font-size:11px;margin-top:3px}.wow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.wow-card{padding:25px;border-radius:22px;border:1px solid rgba(181,199,255,.14);background:linear-gradient(150deg,rgba(9,16,31,.9),rgba(3,7,16,.97));min-height:330px}.wow-card>span{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:rgba(243,206,120,.11);color:#f3ce78;font-weight:800;font-size:11px}.wow-card h3{font-size:25px;line-height:1.05;margin:54px 0 12px}.wow-card p{color:#aeb8ca;font-size:14px;line-height:1.55}.wow-mini{margin-top:24px;padding:12px 13px;border-radius:12px;background:#030812;border:1px solid rgba(181,199,255,.11);display:flex;align-items:center;gap:10px}.wow-mini b{font-size:9px;color:#8491a7}.wow-mini i{font-style:normal;color:#f3ce78}.wow-mini strong{font-size:11px;margin-left:auto}.tech-console{border:1px solid rgba(181,199,255,.15);border-radius:24px;background:#040914;padding:24px}.tech-console-head{display:flex;justify-content:space-between;color:#f3ce78;font-size:9px;letter-spacing:.12em;margin-bottom:18px}.console-line{display:grid;grid-template-columns:86px 1fr auto;gap:14px;padding:15px 0;border-bottom:1px solid rgba(181,199,255,.1);align-items:center}.console-line small{color:#7f8ca1;font-size:9px}.console-line b{font-size:13px}.console-line em{font-style:normal;color:#6ee25e;font-size:9px;text-transform:uppercase;letter-spacing:.09em}.console-pulse{display:flex;gap:10px;align-items:flex-start;margin-top:18px;color:#9ca8bb;font-size:11px;line-height:1.5}.console-pulse i{width:8px;height:8px;border-radius:50%;background:#6ee25e;margin-top:4px;flex:none}.industry-logic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.industry-logic-grid article{padding:22px;border:1px solid rgba(181,199,255,.14);border-radius:20px;background:rgba(4,9,20,.78);min-height:300px}.industry-logic-grid article>span{display:block;color:#f3ce78;font-size:9px;letter-spacing:.11em;margin-top:18px}.industry-logic-grid h3{font-size:21px;margin:9px 0}.industry-logic-grid p{color:#9da9bb;font-size:12px;line-height:1.55}.logic-orb{width:74px;height:74px;border-radius:50%;background-size:contain;background-position:center;background-repeat:no-repeat}.logic-orb.restaurant{background-image:url('../assets/planets/homepage_orbs/restaurant-orb.png')}.logic-orb.dental{background-image:url('../assets/planets/homepage_orbs/healthcare-orb.png')}.logic-orb.accounting{background-image:url('../assets/planets/homepage_orbs/accounting-orb.png')}.logic-orb.salon{background-image:url('../assets/planets/homepage_orbs/salons-orb.png')}.tech-before-after{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tech-before-after>div{padding:24px;border-radius:21px;border:1px solid rgba(181,199,255,.14);background:#050a14}.tech-before-after .after{border-color:rgba(243,206,120,.29);background:linear-gradient(145deg,rgba(38,28,7,.62),rgba(4,9,19,.95))}.tech-before-after small{color:#f3ce78;font-size:9px;letter-spacing:.12em}.tech-before-after h3{font-size:22px;margin:12px 0 18px}.tech-before-after ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}.tech-before-after li{font-size:12px;color:#a7b2c4;padding-left:16px;position:relative}.tech-before-after li::before{content:'•';position:absolute;left:0;color:#f3ce78}
+
+/* Contact page v27 */
+.contact-choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.contact-choice{padding:28px;border-radius:22px;border:1px solid rgba(181,199,255,.14);background:linear-gradient(150deg,rgba(9,16,31,.9),rgba(3,7,16,.96));min-height:260px}.contact-choice .num{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:rgba(243,206,120,.11);color:#f3ce78;font-size:11px;font-weight:800}.contact-choice h3{font-size:25px;margin:42px 0 10px}.contact-choice p{color:#aeb8ca;line-height:1.55;font-size:14px}.contact-choice a{display:inline-block;color:#f3ce78;margin-top:18px;text-decoration:none;font-weight:700;font-size:13px}.contact-route-card{padding:28px;border-radius:23px;border:1px solid rgba(243,206,120,.27);background:linear-gradient(145deg,rgba(36,27,8,.7),rgba(4,9,19,.96))}.contact-route-card>span{font-size:9px;letter-spacing:.12em;color:#f3ce78}.contact-route-card h3{font-size:28px;margin:13px 0}.contact-route-card p{color:#b6c0d0;line-height:1.6;font-size:14px}.contact-route-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}.contact-route-actions button{height:48px;border-radius:11px;border:1px solid rgba(181,199,255,.17);background:#060b15;color:#6f7b8f;font-weight:700}.contact-route-card small{display:block;margin-top:12px;color:#8793a7;font-size:10px;line-height:1.45}
+
+@media(max-width:900px){.tech-route{grid-template-columns:1fr}.tech-arrow{transform:rotate(90deg);justify-self:center}.wow-grid,.industry-logic-grid{grid-template-columns:1fr 1fr}.contact-choice-grid{grid-template-columns:1fr}}
+@media(max-width:720px){.tech-map{min-height:0}.tech-route{margin-top:22px}.wow-grid,.industry-logic-grid,.tech-before-after{grid-template-columns:1fr}.wow-card{min-height:250px}.wow-card h3{margin-top:34px}.industry-logic-grid article{min-height:220px;text-align:left}.contact-route-actions{grid-template-columns:1fr}.browser-demo-shell{min-height:420px;padding:18px}.browser-demo-body{min-height:350px}.browser-demo-body iframe{height:350px}}
+
+/* =====================================================================
+   V28 — Retell in-browser voice demo
+   No phone number is displayed or dialled. The visitor stays on Trovi.
+   ===================================================================== */
+.retell-demo-stage{text-align:center;width:100%;max-width:370px;padding:36px 18px 22px;margin:auto}
+.retell-demo-orb{width:112px;height:112px;border-radius:50%;margin:0 auto 24px;position:relative;background:radial-gradient(circle at 34% 28%,rgba(255,255,255,.96) 0 5%,#9fd8ff 15%,#3979d8 38%,#102a5c 63%,#050812 78%);box-shadow:0 0 48px rgba(88,143,255,.24),inset 0 0 22px rgba(255,255,255,.18);overflow:hidden}
+.retell-demo-orb span{position:absolute;inset:12%;border-radius:50%;border:1px solid rgba(243,206,120,.34);box-shadow:inset 0 0 20px rgba(255,255,255,.12)}
+.retell-demo-stage h3{font-size:26px;line-height:1.08;margin:0;color:#fff;letter-spacing:-.03em}
+.retell-demo-message{margin:12px auto 0;color:#b9c2d2;line-height:1.55;max-width:320px;font-size:14px}
+.retell-demo-wave{height:42px;display:flex;align-items:center;justify-content:center;gap:5px;margin:24px 0 20px}
+.retell-demo-wave i{display:block;width:3px;height:12px;border-radius:99px;background:#d6a947;opacity:.65;transform-origin:center;animation:retellWave 1s ease-in-out infinite alternate;animation-play-state:paused}
+.retell-demo-wave i:nth-child(2){height:22px;animation-delay:-.2s}.retell-demo-wave i:nth-child(3){height:31px;animation-delay:-.5s}.retell-demo-wave i:nth-child(4){height:18px;animation-delay:-.7s}.retell-demo-wave i:nth-child(5){height:36px;animation-delay:-.35s}.retell-demo-wave i:nth-child(6){height:24px;animation-delay:-.6s}.retell-demo-wave i:nth-child(7){height:33px;animation-delay:-.1s}.retell-demo-wave i:nth-child(8){height:19px;animation-delay:-.45s}.retell-demo-wave i:nth-child(9){height:27px;animation-delay:-.75s}
+.retell-demo-stage.is-connecting .retell-demo-orb{animation:retellPulse 1.5s ease-in-out infinite}
+.retell-demo-stage.is-live .retell-demo-wave i,.retell-demo-stage.is-speaking .retell-demo-wave i{animation-play-state:running}
+.retell-demo-stage.is-speaking .retell-demo-orb{box-shadow:0 0 68px rgba(88,143,255,.4),0 0 34px rgba(217,170,73,.2),inset 0 0 22px rgba(255,255,255,.18)}
+.retell-demo-stage.is-ended .retell-demo-orb{filter:saturate(.5);opacity:.7}
+.retell-demo-stage.is-error .retell-demo-orb{filter:saturate(.4);opacity:.55}
+.retell-demo-end{min-width:150px;height:44px;border-radius:12px;border:1px solid rgba(243,206,120,.48);background:rgba(13,17,28,.94);color:#fff;font-weight:700;padding:0 22px}
+.retell-demo-end:disabled{opacity:.38;cursor:default}
+.retell-demo-note{display:block;margin-top:14px;color:#788397;font-size:11px;line-height:1.4}
+.retell-demo-active{box-shadow:0 0 0 2px rgba(243,206,120,.38)!important}
+@keyframes retellWave{from{transform:scaleY(.55);opacity:.45}to{transform:scaleY(1.18);opacity:1}}
+@keyframes retellPulse{50%{transform:scale(1.035);box-shadow:0 0 72px rgba(88,143,255,.35),inset 0 0 22px rgba(255,255,255,.18)}}
+@media(max-width:720px){.retell-demo-stage{padding:28px 10px 14px}.retell-demo-orb{width:92px;height:92px}.retell-demo-stage h3{font-size:22px}.retell-demo-message{font-size:13px}.retell-demo-wave{margin:18px 0 16px}.browser-demo-shell{width:min(390px,calc(100vw - 28px));min-height:390px;border-radius:22px}.browser-demo-body{min-height:330px}}

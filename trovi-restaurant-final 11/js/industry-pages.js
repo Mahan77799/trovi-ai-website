@@ -1,15 +1,5 @@
 (function(){
-  var demoButtons=document.querySelectorAll('[data-industry-demo]');
-  demoButtons.forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var phone=(btn.getAttribute('data-phone')||'').trim();
-      var label=btn.getAttribute('data-label')||'Trovi';
-      if(phone){
-        btn.setAttribute('aria-label','Opening '+label+' live demo line');
-        window.location.href='tel:'+phone.replace(/[^+\d]/g,'');
-      }
-    });
-  });
+  /* Live demo clicks are handled by retell-web-demo-v28.js. */
   var mq=window.matchMedia('(max-width: 720px)');
   if(mq.matches){
     document.querySelectorAll('footer .f-grid>div:not(.f-brand)').forEach(function(group){

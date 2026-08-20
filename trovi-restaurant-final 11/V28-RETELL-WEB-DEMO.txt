@@ -1,0 +1,20 @@
+Trovi AI v28 — Retell browser demos
+
+Configured agent IDs:
+- Restaurant: agent_d865eb26699b6685dca729ba9e
+- Dental Clinic: agent_4fe9f465656f8029b5ba54ac2c
+- Accounting Firm: agent_22cc7eb05b4a0733d2b4b50c3a
+- Salon: agent_f0a6ea2f63d7c98f7a29b55b82
+
+Vercel setup required:
+1. Project Settings > Environment Variables
+2. Add RETELL_API_KEY with your Retell API key.
+3. Enable it for Production (and Preview if desired).
+4. Redeploy after saving.
+
+How it works:
+- Visitor clicks a demo.
+- The website calls /api/create-web-call on the same Vercel deployment.
+- The server uses RETELL_API_KEY to request a single-use Retell web-call access token.
+- The browser starts Retell Web SDK and asks for microphone access.
+- No phone number is displayed or dialled.
