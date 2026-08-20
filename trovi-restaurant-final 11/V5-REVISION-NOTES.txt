@@ -1,0 +1,17 @@
+Trovi AI V5 revisions
+
+- Dental Clinics replaces Healthcare on the homepage demo card.
+- Barbershop stat reduced from 41 to 27.
+- Auto repair dollar stat replaced with an 18% early-pilot appointment lift.
+- Testimonial heading expanded and redesigned.
+- Photo placeholders removed from testimonials.
+- Five-star styling added to each review.
+- Mahan name removed; owner attribution used instead.
+- Added a restaurant-owner testimonial.
+- FAQ integration language no longer names unsupported platforms.
+- Setup timing promises removed.
+- Pricing copy now explains call-volume tiers.
+- Receptionist answer includes light humour.
+- Final homepage CTA removed.
+- Header CTAs reduced in size.
+- Restaurant landing page text contrast upgraded for the dark background.

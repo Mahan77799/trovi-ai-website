@@ -1,0 +1,8 @@
+TROVI AI V6 HOMEPAGE UPDATES
+
+- Removed the client/company marquee section.
+- Reordered owner reviews: Restaurant, Accounting, Barbershop, Beauty.
+- Changed the Ask Trovi AI Anything orb/card accent from turquoise to premium orange.
+- Connected the Restaurants homepage demo card to the live restaurant agent: +1 506-702-5391 (tel:+15067025391).
+- Other homepage demo cards keep their existing fallback behavior until their live numbers are supplied. To connect a new demo, add data-phone="+1..." to that card in index.html.
+- Mobile layout was intentionally NOT redesigned in this revision.

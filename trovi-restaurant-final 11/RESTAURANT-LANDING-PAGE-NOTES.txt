@@ -1,0 +1,28 @@
+TROVI AI — RESTAURANT LANDING PAGE
+
+NEW PAGE
+solutions/restaurants.html
+
+NEW SUPPORTING FILES
+css/restaurants.css
+js/restaurants.js
+marketing/restaurants-ontario-google-ads-plan.txt
+robots.txt
+sitemap.xml
+
+WHAT WAS ADDED
+- Restaurant-specific SEO title, description, canonical URL, social metadata, Service schema, and FAQ schema
+- Interactive reservation, takeout, and private-event call demo
+- Animated call transcript, waveform, queues, workflow map, charts, counters, donut chart, and scrolling capability strip
+- Restaurant pain-point sections designed for quick scanning rather than long paragraphs
+- Clearly labelled illustrative analytics dashboard so no sample data is presented as a real Trovi result
+- Free Ontario restaurant pilot CTA throughout the page
+- Restaurants link added to the Solutions dropdown, mobile menu, and footer across the site
+- Ontario restaurant Google Ads keyword, ad-copy, negative-keyword, and message-match plan
+
+DEPLOYMENT
+Upload the full project contents to the same GitHub repository connected to Vercel. Vercel should redeploy automatically after the commit. The page will be available at:
+https://troviai.com/solutions/restaurants.html
+
+IMPORTANT
+The industry statistics cite Restaurants Canada. The dashboard values are sample figures used only to demonstrate the interface and are labelled accordingly. Replace them with verified pilot outcomes once real restaurant data is available.

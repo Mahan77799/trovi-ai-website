@@ -1,0 +1,8 @@
+Background updated to the exact midnight blue / gold satin artwork requested.
+
+Files added:
+- assets/branding/luxury-satin-bg-v2.webp
+- assets/branding/luxury-satin-bg-v2.png
+
+CSS updated:
+- css/luxury-theme.css now uses luxury-satin-bg-v2.webp with lighter overlays so the background detail shows through more clearly.

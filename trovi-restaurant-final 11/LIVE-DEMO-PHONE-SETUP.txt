@@ -1,0 +1,16 @@
+TROVI RESTAURANT LIVE DEMO PHONE SETUP
+
+The live carousel and click-to-call experience are already built.
+To connect the real Trovi number:
+
+1. Open: solutions/restaurants.html
+2. Find:
+   <div class="rr-live-demo" id="rrLiveDemo" data-phone=""
+3. Add the full international phone number, for example:
+   data-phone="+14165551234"
+4. Save, commit, and push to GitHub.
+
+Use digits and the country code. The website automatically opens the visitor's phone dialer.
+
+Important:
+A telephone number supports click-to-call. A true browser microphone conversation requires a WebRTC/web-call SDK from the voice provider (for example the provider hosting the Trovi agent). That can be added separately once the provider and agent ID are confirmed.

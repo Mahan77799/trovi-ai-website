@@ -1,0 +1,10 @@
+Trovi AI mobile homepage v9
+
+Mobile-only changes (desktop remains untouched):
+- Prevented horizontal page drift and mobile zoom.
+- Kept the page centred inside the viewport.
+- Narrowed the single demo card.
+- Replaced unclear top-right icon buttons with one written “Start for free today” CTA.
+- Added “Book a demo” beneath the mobile demo carousel.
+- Tightened the play button and waveform so they sit beside each other.
+- Kept desktop 3+3 demo cards and desktop navigation unchanged.

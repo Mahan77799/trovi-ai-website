@@ -1,0 +1,5 @@
+Mobile V14
+- Removed the unwanted grey/white circular halo around the blue restaurant demo orb on mobile.
+- Kept the blue liquid orb and centered play button unchanged.
+- Desktop styling remains untouched.
+- Bumped restaurants.css cache version to v14.

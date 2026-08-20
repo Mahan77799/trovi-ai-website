@@ -1,0 +1,7 @@
+V25
+- Desktop homepage industry demos now use a 3-card carousel.
+- Center card is larger/focused; side cards are smaller.
+- Arrows rotate across all 4 active demos.
+- Four dots indicate the focused demo.
+- Mobile remains the existing single-card carousel.
+- Hero changing words no longer move the demo carousel.

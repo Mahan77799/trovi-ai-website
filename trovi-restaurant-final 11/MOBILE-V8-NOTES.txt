@@ -1,0 +1,8 @@
+Trovi AI mobile homepage v8
+- Desktop layout intentionally untouched.
+- New CSS is loaded only at max-width 720px.
+- Mobile navigation order: menu, Trovi AI logo, compact demo/start icons.
+- Hero CTA buttons are hidden on mobile because their actions are in the nav.
+- Mobile industry demos are one card at a time in the former hero CTA position.
+- Mobile demo carousel does not follow the rotating hero words.
+- Existing desktop 3 + 3 demo carousel remains unchanged.

@@ -1,0 +1,6 @@
+Trovi AI mobile v10
+- Mobile demo card and Book a demo moved higher and compacted.
+- Mobile homepage text centered.
+- Mobile stats changed to one-card swipe carousel with counter replay as each card becomes active.
+- Mobile footer changed to centered accordion/dropdown sections.
+- Desktop styles and 3+3 demo layout remain untouched.

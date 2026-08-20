@@ -1,0 +1,6 @@
+Trovi AI V12 mobile refinements
+
+- Homepage rotating hero word is mathematically centered on mobile for every word length.
+- Mobile live call counter is smaller and intentionally left aligned.
+- Restaurant landing page receives a dedicated mobile layout: compact nav, centered hero, smaller CTA group and centered live-agent card.
+- Desktop rules are unchanged; all new layout rules are inside max-width mobile media queries.

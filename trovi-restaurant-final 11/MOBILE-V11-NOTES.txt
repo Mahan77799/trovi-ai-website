@@ -1,0 +1,9 @@
+Trovi AI mobile v11
+
+- Rotating gold hero word is centered independently of the decorative orb.
+- Stats carousel uses a precisely centered single card.
+- Added arrows and dots under stats carousel.
+- Number animation replays as each stats card becomes active.
+- Footer brand remains centered.
+- Footer accordion menu groups now use black panels with title and plus controls grouped on the left.
+- Desktop layout remains untouched because v11 CSS/JS only activate at max-width 720px.

@@ -1,0 +1,140 @@
+TROVI AI — ONTARIO RESTAURANT SEARCH CAMPAIGN
+Prepared for the restaurant landing page: /solutions/restaurants.html
+
+POSITIONING
+AI receptionist for restaurants that answers calls 24/7, manages reservations, takes takeout orders, texts guests, and transfers important calls to staff.
+Initial offer: free Ontario restaurant pilot for a limited period, followed by an optional monthly subscription.
+
+CAMPAIGN STRUCTURE
+Campaign: Ontario | Restaurants | Search | Pilot
+Location: Ontario, Canada
+Location option: People in or regularly in Ontario
+Launch match types: Exact and Phrase only
+Primary conversion: Free pilot form submission / booked call
+Secondary conversion: Restaurant demo interaction
+
+AD GROUP 1 — AI RECEPTIONIST
+[ai receptionist for restaurants]
+[restaurant ai receptionist]
+"ai receptionist for restaurants"
+"restaurant ai receptionist"
+"ai phone agent for restaurants"
+"restaurant virtual receptionist"
+
+AD GROUP 2 — ANSWERING SERVICE
+[restaurant answering service]
+"restaurant answering service"
+"phone answering service for restaurants"
+"restaurant call answering service"
+"24/7 restaurant answering service"
+"restaurant phone answering system"
+
+AD GROUP 3 — RESERVATIONS
+"restaurant reservation answering service"
+"ai restaurant reservation system"
+"automated restaurant reservations phone"
+"after hours restaurant reservation service"
+"restaurant reservation phone system"
+
+AD GROUP 4 — PHONE ORDERS
+"ai phone ordering for restaurants"
+"restaurant phone ordering system"
+"automated phone ordering restaurant"
+"voice ordering system restaurant"
+"restaurant takeout order answering service"
+
+AD GROUP 5 — MISSED CALLS / AFTER HOURS
+"restaurant missed call solution"
+"after hours restaurant answering service"
+"restaurant call overflow service"
+"restaurant call automation"
+"voice ai for restaurants"
+
+INITIAL NEGATIVE KEYWORDS
+jobs
+job
+career
+salary
+course
+training
+free software
+template
+script
+recipe
+restaurants near me
+book a restaurant
+table reservation near me
+customer service number
+doordinates support
+uber eats support
+skip support
+opentable login
+resy login
+consumer app
+
+RESPONSIVE SEARCH AD 1
+Headlines:
+AI Receptionist for Restaurants
+Every Restaurant Call Answered
+Book Reservations 24/7
+Take Takeout Orders by Phone
+Start a Free Ontario Pilot
+Stop Losing Calls During Rush
+Text Guests Automatically
+Built for Busy Restaurants
+Transfer Important Calls to Staff
+Restaurant Phone Automation
+
+Descriptions:
+Trovi answers calls, manages reservations, takes takeout orders, texts guests, and transfers important calls to staff.
+Try a restaurant-specific AI receptionist free for a limited pilot period. Configured around your menu and call flow.
+Keep staff focused during service while Trovi handles guest questions, reservations, and phone orders 24/7.
+Turn missed calls into reservations, orders, and private-event leads. Apply for the Ontario restaurant pilot.
+
+RESPONSIVE SEARCH AD 2 — RESERVATION INTENT
+Headlines:
+Restaurant Reservation AI
+Manage Reservations by Phone
+Create, Change & Cancel Bookings
+Never Miss an After-Hours Booking
+Free Ontario Restaurant Pilot
+
+Descriptions:
+Let guests create, change, or cancel reservations by phone without pulling staff away from service.
+Trovi answers 24/7, texts confirmations, and transfers special requests to your team when needed.
+
+RESPONSIVE SEARCH AD 3 — TAKEOUT INTENT
+Headlines:
+AI Phone Ordering for Restaurants
+Take Takeout Orders 24/7
+Send Phone Orders to Your Team
+No More Busy-Line Orders
+Try Trovi Free in Ontario
+
+Descriptions:
+Trovi captures complete takeout orders, confirms pickup details, and notifies your kitchen or team.
+Give guests a fast, natural phone-ordering experience while staff stay focused on service.
+
+LANDING PAGE MESSAGE MATCH
+Keyword: ai receptionist for restaurants
+Ad headline: AI Receptionist for Restaurants
+Landing page H1 context: AI receptionist for restaurants / Turn every restaurant call into action.
+
+Keyword: restaurant answering service
+Ad headline: Every Restaurant Call Answered
+Landing page sections: dinner-rush interruptions, after-hours demand, guest questions, transfers.
+
+Keyword: ai phone ordering for restaurants
+Ad headline: Take Takeout Orders 24/7
+Landing page sections: interactive takeout call, takeout workflow, orders sent to team.
+
+OPTIMIZATION CHECKLIST
+1. Review Search Terms every 2–3 days during the first two weeks.
+2. Add irrelevant consumer searches as negatives immediately.
+3. Keep restaurant ads pointed only to the restaurant page.
+4. Do not send phone-ordering keywords to the homepage.
+5. Build separate reservation and takeout pages only after search volume/conversion data proves the need.
+6. Use real pilot results later to replace illustrative dashboard data with verified Trovi outcomes.
+
+CLAIM GUARDRAIL
+Do not advertise customer counts, savings percentages, deflection rates, integration partnerships, or ROI until Trovi can verify them. The page uses illustrative dashboard data clearly labelled as a sample.

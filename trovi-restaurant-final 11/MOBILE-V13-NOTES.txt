@@ -1,0 +1,6 @@
+Mobile v13 updates:
+- Removed the decorative moving orb from the homepage rotating words on mobile; words continue changing automatically and stay centered.
+- Moved the live calls proof directly under Book a demo and made it much smaller, left aligned, with a simple blue live dot and no box.
+- Restaurant mobile hero now shows the live demo card before the social-proof chip and CTA buttons.
+- Restaurant demo card is smaller and uses a dark luxury treatment to match the site.
+- Desktop layouts are unchanged.

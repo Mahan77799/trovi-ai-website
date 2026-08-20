@@ -1,0 +1,6 @@
+V29 Retell browser microphone fix
+- Requests microphone permission directly from the user's demo-card click.
+- Verifies microphone access before creating the Retell web-call token.
+- Explicitly unmutes the Retell Web SDK after startCall.
+- Explicitly resumes browser audio playback after connection.
+- Adds clearer microphone-permission error messaging.

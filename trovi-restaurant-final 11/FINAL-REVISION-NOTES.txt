@@ -1,0 +1,10 @@
+Homepage revision completed:
+- Real Estate renamed Restaurants
+- Legal renamed Auto Shop
+- Ecommerce renamed Ask Trovi AI Anything
+- Book a call CTAs changed to Start for free today
+- Added Hear a demo beside the homepage primary CTA
+- Added thin champagne-gold borders to CTA buttons
+- Increased text contrast in the trusted-business and dark content sections
+- Removed the Finally. A front desk that actually picks up video section
+- Removed visible em dashes from HTML copy
