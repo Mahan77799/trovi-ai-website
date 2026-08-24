@@ -1,3 +1,0 @@
-V19 updates
-- Homepage first industry slide order adjusted to: Ask Trovi AI Anything, Restaurants, Dental Clinics, for both desktop and mobile carousel behavior.
-- Review card name updated from generic placeholder to Limoncello.

@@ -1,5 +1,0 @@
-V24
-- Reduced typography scale across Salon, Dental Clinic and Accounting landing pages.
-- Made demo cards, orbs, buttons, stats and visual panels more compact.
-- Tightened section spacing for cleaner desktop and mobile layouts.
-- Desktop/mobile styling only; page content and research claims unchanged.
