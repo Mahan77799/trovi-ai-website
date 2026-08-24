@@ -4,6 +4,13 @@
   var sdkPromise = null;
   var closing = false;
 
+  var orbImages = {
+    restaurant: '/assets/planets/homepage_orbs/restaurant-orb.png',
+    dental: '/assets/planets/homepage_orbs/healthcare-orb.png',
+    accounting: '/assets/planets/homepage_orbs/accounting-orb.png',
+    salon: '/assets/planets/homepage_orbs/salons-orb.png'
+  };
+
   var labels = {
     restaurant: 'Restaurant',
     dental: 'Dental Clinic',
@@ -35,10 +42,11 @@
       '<div class="browser-demo-backdrop" data-demo-close></div>'+
       '<div class="browser-demo-shell" role="dialog" aria-modal="true" aria-labelledby="troviDemoTitle">'+
         '<button class="browser-demo-close" type="button" data-demo-close aria-label="Close live demo">×</button>'+
+        '<div class="browser-demo-brand"><img src="/assets/branding/trovi-ai-logo-white.png" alt="Trovi AI"></div>'+
         '<div class="browser-demo-status"><i></i><span>LIVE TROVI DEMO</span></div>'+
         '<div class="browser-demo-body">'+
           '<div class="retell-demo-stage">'+
-            '<div class="retell-demo-orb" aria-hidden="true"><span></span></div>'+
+            '<div class="retell-demo-orb" aria-hidden="true"><img src="/assets/planets/homepage_orbs/restaurant-orb.png" alt=""></div>'+
             '<h3 id="troviDemoTitle">Connecting…</h3>'+
             '<p class="retell-demo-message">Preparing a private browser call. No phone number is dialled.</p>'+
             '<div class="retell-demo-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>'+
@@ -62,7 +70,8 @@
       title: modal.querySelector('#troviDemoTitle'),
       message: modal.querySelector('.retell-demo-message'),
       stage: modal.querySelector('.retell-demo-stage'),
-      end: modal.querySelector('[data-demo-end]')
+      end: modal.querySelector('[data-demo-end]'),
+      orb: modal.querySelector('.retell-demo-orb img')
     };
   }
 
@@ -120,6 +129,7 @@
     if (activeTrigger) activeTrigger.classList.add('retell-demo-active');
 
     var x = ui();
+    if (x.orb && orbImages[kind]) x.orb.src = orbImages[kind];
     x.modal.classList.add('is-open');
     x.modal.setAttribute('aria-hidden','false');
     setState('connecting', 'Connecting to the ' + labels[kind] + ' demo…', 'Stay on this page. Trovi is opening a live voice session in your browser.');

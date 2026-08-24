@@ -1,0 +1,6 @@
+Trovi AI V30
+- Renamed Solutions to Industries across navigation/footer labels.
+- Moved Industries ahead of Platform in desktop and mobile menus where applicable.
+- Added Trovi AI logo to the in-browser Retell demo modal.
+- Replaced generic blue demo sphere with the exact industry card orb: Restaurant blue, Dental green, Accounting purple, Salon pink.
+- Retell agent IDs, API route, microphone permissions, and call behavior were not changed.
