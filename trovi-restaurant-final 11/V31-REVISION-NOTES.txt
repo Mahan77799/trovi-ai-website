@@ -1,0 +1,7 @@
+Trovi AI V31
+- Industries remains the first navigation category across desktop/mobile.
+- Live Retell modal now has a forced-visible Trovi AI logo.
+- Live modal uses the matching existing demo artwork for Restaurant, Dental Clinic, Accounting Firm and Salon.
+- Removed generic CSS orb treatment from the V31 live-demo artwork.
+- Added new JS filename and cache-busting so Vercel/browser cannot silently reuse the previous demo UI.
+- Retell agent IDs, token endpoint, microphone flow and call logic were not changed.
