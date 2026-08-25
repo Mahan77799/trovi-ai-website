@@ -117,6 +117,23 @@
   </div>
 </div></section>
 
+<!-- ===== TROVI AI AT WORK ===== -->
+<section class="work-stage work-stage-simple" id="real-calls" aria-labelledby="real-calls-title">
+  <div class="wrap work-simple-wrap rv" data-work-console>
+    <h2 id="real-calls-title">Hear Trovi AI in action</h2>
+    <p class="work-simple-sub">Listen to a real customer conversation</p>
+    <div class="work-simple-player">
+      <button class="work-play" type="button" aria-label="Play real conversation"><span>▶</span></button>
+      <div class="work-wave" aria-hidden="true"><i style="--h:24%"></i><i style="--h:48%"></i><i style="--h:68%"></i><i style="--h:35%"></i><i style="--h:82%"></i><i style="--h:55%"></i><i style="--h:94%"></i><i style="--h:46%"></i><i style="--h:72%"></i><i style="--h:31%"></i><i style="--h:63%"></i><i style="--h:88%"></i><i style="--h:42%"></i><i style="--h:78%"></i><i style="--h:34%"></i><i style="--h:66%"></i><i style="--h:51%"></i><i style="--h:91%"></i><i style="--h:39%"></i><i style="--h:75%"></i><i style="--h:57%"></i><i style="--h:84%"></i><i style="--h:29%"></i><i style="--h:69%"></i><i style="--h:45%"></i><i style="--h:96%"></i><i style="--h:53%"></i><i style="--h:80%"></i></div>
+    </div>
+    <div class="work-switch work-dot-switch" role="group" aria-label="Choose a real conversation">
+      <button class="is-active" type="button" data-work-track="0" aria-label="Play conversation 1"></button>
+      <button type="button" data-work-track="1" aria-label="Play conversation 2"></button>
+    </div>
+    <audio preload="metadata" data-work-audio></audio>
+  </div>
+</section>
+
 <!-- ===== FEATURED CUSTOMER STORY TEMPORARILY REMOVED IN V16 ===== -->
 
 <!-- ===== TESTIMONIALS (dark carousel) ===== -->
@@ -168,5 +185,25 @@
 
 <script src="js/main.js?v=25"></script>
 <script src="js/mobile-home-v11.js?v=13"></script>
-<script src="js/retell-web-demo-v31.js?v=31"></script></body>
+<script src="js/retell-web-demo-v31.js?v=31"></script><script>
+(function(){
+  const box=document.querySelector('[data-work-console]'); if(!box)return;
+  const audio=box.querySelector('[data-work-audio]');
+  const play=box.querySelector('.work-play');
+  const tracks=['assets/audio/real-client-call-01.mp3','assets/audio/real-client-call-02.mp3'];
+  const dots=[...box.querySelectorAll('[data-work-track]')];
+  let current=0;
+  function select(i){
+    current=i; audio.pause(); audio.src=tracks[i]; audio.load(); box.classList.remove('is-playing');
+    dots.forEach((d,n)=>d.classList.toggle('is-active',n===i));
+  }
+  dots.forEach((d,i)=>d.addEventListener('click',()=>select(i)));
+  play.addEventListener('click',()=>{
+    if(audio.paused){audio.play().then(()=>box.classList.add('is-playing')).catch(()=>{});}else{audio.pause();box.classList.remove('is-playing');}
+  });
+  audio.addEventListener('ended',()=>box.classList.remove('is-playing'));
+  select(0);
+})();
+</script>
+</body>
 </html>

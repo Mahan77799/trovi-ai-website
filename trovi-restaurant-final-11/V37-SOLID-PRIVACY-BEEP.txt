@@ -1,0 +1,8 @@
+Trovi AI V37 – Solid Privacy Beep
+
+- Rebuilt both real-call recordings from the untouched MP4 sources.
+- Replaced each spoken phone-number exchange with ONE continuous 850 Hz privacy tone.
+- No pulsing / repeated beep-beep pattern.
+- Phone-number tone appears for both the customer and the receptionist repeat-back.
+- Tone level is matched to the surrounding voice and uses short fades to avoid clicks.
+- No website layout or Retell demo functionality was changed.

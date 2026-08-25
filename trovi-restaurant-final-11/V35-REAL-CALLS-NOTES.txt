@@ -1,0 +1,7 @@
+V35 — Real Call Player
+- Simplified the real-call section to a centered, minimal player inspired by the supplied reference.
+- Uses Trovi dark/navy + champagne gold styling.
+- Removed labels/cards/industry names from the real-call experience.
+- Added two small dots to switch between the two recordings.
+- Replaced the embedded recordings with the newly supplied MP4 audio.
+- Masked the identified phone-number exchange in call 01 with professional gated beeps.

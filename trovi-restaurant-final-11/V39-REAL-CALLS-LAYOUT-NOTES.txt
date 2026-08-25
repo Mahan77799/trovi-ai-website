@@ -1,0 +1,4 @@
+V39 updates
+- real-calls title changed to gold
+- real-calls section now uses the blue/gold Trovi satin artwork instead of a flat black look
+- play button moved slightly right and tightened closer to waveform bars

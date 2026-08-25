@@ -1,0 +1,6 @@
+V36 — Real Call Player polish
+- Removed the flat black panel and blended the section into the same Trovi blue/gold satin artwork used across the landing page.
+- Tightened the play-button-to-waveform spacing while keeping the centered minimal composition.
+- Rebuilt both public audio files from the supplied source recordings.
+- Masked both sides of each phone-number exchange (customer and receptionist) with a softer, lower-volume privacy beep.
+- Kept the two-dot recording switcher and existing playback behavior.

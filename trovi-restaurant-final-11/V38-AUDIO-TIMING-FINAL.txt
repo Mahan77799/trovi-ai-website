@@ -1,0 +1,13 @@
+Trovi AI V38 – Final audio timing cleanup
+
+Restaurant call
+- Rebuilt from the untouched source recording.
+- Customer area code 647 remains audible.
+- The remaining 373-3744 digits are covered by one continuous privacy tone.
+- Receptionist repeat-back privacy tone now ends immediately after the phone number, preserving the next spoken word.
+
+Black & White barbershop call
+- Restored from the untouched source recording.
+- No privacy tone is applied anywhere in this call.
+
+No website layout, styling, navigation, Retell demo, or other audio-player behavior was changed.
