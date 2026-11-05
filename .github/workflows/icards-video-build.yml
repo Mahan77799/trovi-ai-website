@@ -1,0 +1,44 @@
+name: Build compatible iCards demo media
+on:
+  push:
+    branches: [fix/icards-reliable-native-video-v2]
+    paths: ['.github/workflows/icards-video-build.yml']
+permissions:
+  contents: write
+jobs:
+  encode:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: true
+      - name: Install media tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Make independently decoded H264/AAC file for mobile and desktop
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd trovi-restaurant-final-11/icards
+          ffmpeg -hide_banner -loglevel warning -nostdin -y -i Trovi_AI_Fahad_Correct_Arabic.mp4 -map 0:v:0 -map 0:a:0 \
+            -vf 'scale=512:910:flags=lanczos,format=yuv420p' -c:v libx264 -preset medium -crf 19 \
+            -profile:v baseline -level:v 3.1 -r 30 -vsync cfr -pix_fmt yuv420p \
+            -c:a aac -b:a 160k -ar 48000 -ac 2 \
+            -movflags +faststart -brand mp42 fahad-demo-mobile-safe-20261105.mp4
+          ffmpeg -v error -xerror -i fahad-demo-mobile-safe-20261105.mp4 -f null -
+          ffprobe -v error -show_entries stream=index,codec_name,profile,width,height,pix_fmt:format=duration,format_name:format_tags=major_brand -of json fahad-demo-mobile-safe-20261105.mp4
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('fahad-demo-mobile-safe-20261105.mp4')
+          b=p.read_bytes()
+          assert b[4:8]==b'ftyp' and b[8:12]==b'mp42'
+          assert b.find(b'moov') < b.find(b'mdat')
+          assert len(b)>1_000_000
+          print('Verified progressive MP4',len(b),'bytes')
+          PY
+      - name: Commit verified media
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add trovi-restaurant-final-11/icards/fahad-demo-mobile-safe-20261105.mp4
+          git diff --cached --quiet || (git commit -m "Add iPhone Safari and desktop validated Fahad video" && git push)
