@@ -112,6 +112,9 @@
 .voice-close{position:absolute;right:16px;top:10px;border:0;color:#e8ecf5;background:none;font-size:26px}
 .voice-footer{font-size:12px;color:#91a0b9;margin:19px 0 0}
 @media(max-width:480px){.voice-dialog{padding:30px 17px 23px}.voice-face{height:163px;width:163px}}
+
+/* Slightly sharpen the built-in fallback portrait until the original-video frame loads. */
+.avatar .fahad-portrait{image-rendering:auto;filter:contrast(1.04) saturate(1.035)}
 </style></head><body>
 <section class="scene gate" id="gate"><div class="store" aria-hidden="true"></div><div class="gate-card"><div class="identity"><img src="../assets/branding/trovi-ai-logo-white.png" alt="Trovi AI"><span class="divider-brand"></span><span class="icard">iCards<sup>®</sup></span></div><div class="eyebrow">PRIVATE EXPERIENCE</div><h1>Enter Access Code</h1><p>An exclusive experience prepared for iCards Kuwait.</p><form id="gateForm" autocomplete="off"><div class="code" role="group" aria-label="Four digit access code"><input class="digit" type="password" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Digit 1" required autofocus><input class="digit" type="password" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Digit 2" required><input class="digit" type="password" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Digit 3" required><input class="digit" type="password" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Digit 4" required></div><button class="btn btn-gold" type="submit">Unlock Experience →</button><p class="error" id="error" role="alert"></p></form></div></section>
 <section class="scene" id="experience" hidden><div class="store" aria-hidden="true"></div><div class="shell"><header class="mast"><div class="identity"><img src="../assets/branding/trovi-ai-logo-white.png" alt="Trovi AI"><span class="divider-brand"></span><span class="icard">iCards<sup>®</sup></span></div><div class="private-pill">♙ &nbsp; Private Preview</div></header><main class="hero"><div class="phone-zone"><div class="phone" aria-label="iPhone-style illustration of Fahad's call screen">
@@ -235,5 +238,46 @@ voiceMute.onclick=()=>{
 window.addEventListener('pagehide',()=>{if(voiceSession)voiceSession.endSession().catch(()=>{})});
 
 // Avatar uses a still frame to remain visible without video decoding on iOS/Android.
+
+// Enhance the always-visible portrait with a higher-resolution crop from the original
+// uploaded MP4 where mobile video decoding permits it. On browsers that do not decode
+// background video, the existing embedded portrait remains visible.
+(function upgradeFahadPortrait(){
+  const portrait=document.querySelector('.avatar .fahad-portrait');
+  if(!portrait || !document.createElement('canvas').getContext)return;
+  const v=document.createElement('video');
+  v.muted=true;v.playsInline=true;v.preload='metadata';
+  v.src='./fahad-demo.mp4';
+  let updated=false;
+  const capture=()=>{
+    if(updated || v.readyState<2 || !v.videoWidth || !v.videoHeight)return;
+    try{
+      const canvas=document.createElement('canvas');
+      canvas.width=400;canvas.height=400;
+      const ctx=canvas.getContext('2d');
+      if(!ctx)return;
+      // Crop the native 512x910 frame around Fahad's face, not the Arabic captions.
+      const x=v.videoWidth*(60/512),y=v.videoHeight*(87/910);
+      const w=v.videoWidth*(392/512),h=v.videoHeight*(392/910);
+      ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+      ctx.drawImage(v,x,y,w,h,0,0,400,400);
+      const image=canvas.toDataURL('image/webp',0.92);
+      if(image && image.length>2000){
+        const test=new Image();
+        test.onload=()=>{portrait.src=image; const modalPortrait=document.getElementById('voicePortrait');if(modalPortrait)modalPortrait.src=image;};
+        test.src=image;
+        updated=true;
+      }
+    }catch(_) {/* Preserve the embedded still on unsupported mobile devices. */}
+    if(updated){try{v.pause();v.removeAttribute('src');v.load()}catch(_){}}
+  };
+  v.addEventListener('loadedmetadata',()=>{
+    try{v.currentTime=0.05}catch(_){}
+  },{once:true});
+  v.addEventListener('seeked',capture);
+  v.addEventListener('loadeddata',capture);
+  v.addEventListener('error',()=>{try{v.removeAttribute('src')}catch(_){}},{once:true});
+})();
+
 })();
 </script></body></html>
