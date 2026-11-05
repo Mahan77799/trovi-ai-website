@@ -114,6 +114,7 @@
 
 /* Slightly sharpen the built-in fallback portrait until the original-video frame loads. */
 .avatar .fahad-portrait{image-rendering:auto;filter:contrast(1.04) saturate(1.035)}
+.video-recovery[hidden]{display:none}.video-recovery{border:1px solid #b79c6d;border-radius:12px;padding:15px;color:#eee;text-align:center}.video-recovery a{color:#f4d49c;text-decoration:underline}
 </style></head><body>
 <section class="scene gate" id="gate"><div class="store" aria-hidden="true"></div><div class="gate-card"><div class="identity"><img src="../assets/branding/trovi-ai-logo-white.png" alt="Trovi AI"><span class="divider-brand"></span><span class="icard">iCards<sup>®</sup></span></div><div class="eyebrow">PRIVATE EXPERIENCE</div><h1>Enter Access Code</h1><p>An exclusive experience prepared for iCards Kuwait.</p><form id="gateForm" autocomplete="off"><div class="code" role="group" aria-label="Four digit access code"><input class="digit" type="password" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Digit 1" required autofocus><input class="digit" type="password" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Digit 2" required><input class="digit" type="password" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Digit 3" required><input class="digit" type="password" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Digit 4" required></div><button class="btn btn-gold" type="submit">Unlock Experience →</button><p class="error" id="error" role="alert"></p></form></div></section>
 <section class="scene" id="experience" hidden><div class="store" aria-hidden="true"></div><div class="shell"><header class="mast"><div class="identity"><img src="../assets/branding/trovi-ai-logo-white.png" alt="Trovi AI"><span class="divider-brand"></span><span class="icard">iCards<sup>®</sup></span></div><div class="private-pill">♙ &nbsp; Private Preview</div></header><main class="hero"><div class="phone-zone"><div class="phone" aria-label="iPhone-style illustration of Fahad's call screen">
@@ -121,11 +122,11 @@
 <div class="dynamic-island" aria-hidden="true"></div>
 <div class="phone-top"><span>9:41</span><span class="phone-status" aria-hidden="true"><svg viewBox="0 0 45 14" width="45" height="14"><g fill="currentColor"><rect x="1" y="9" width="3" height="4" rx=".5"/><rect x="6" y="7" width="3" height="6" rx=".5"/><rect x="11" y="4" width="3" height="9" rx=".5"/><rect x="16" y="1" width="3" height="12" rx=".5"/><path d="M24 6Q29 1 34 6L29 12z"/><rect x="36" y="3" width="8" height="9" rx="1.5"/><rect x="44" y="6" width="1.5" height="3" rx=".5"/></g></svg></span></div>
 <div class="phone-name">iCards</div><div class="phone-fahad">Fahad</div><div class="phone-time">00:24</div>
-<div class="avatar"><img class="fahad-portrait" src="data:image/webp;base64,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" width="211" height="211" alt="Fahad, the iCards AI assistant" decoding="async" fetchpriority="high"></div>
+<div class="avatar"><img class="fahad-portrait" src="./fahad-portrait-hq.webp" width="211" height="211" alt="Fahad, the iCards AI assistant" decoding="async" fetchpriority="high"></div>
 <div class="phone-controls"><div class="call-tool"><span class="round"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5L6.5 9H3v6h3.5l4.5 4V5z" fill="currentColor"/><path d="M15 9a4 4 0 010 6M18 6a8 8 0 010 12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span>speaker</span></div><div class="call-tool"><span class="round"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 10v2a7 7 0 0013 3M12 19v3M8 22h8M3 3l18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>mute</span></div><div class="call-tool"><span class="round"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><circle cx="6" cy="5" r="1.7"/><circle cx="12" cy="5" r="1.7"/><circle cx="18" cy="5" r="1.7"/><circle cx="6" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="18" cy="12" r="1.7"/><circle cx="6" cy="19" r="1.7"/><circle cx="12" cy="19" r="1.7"/><circle cx="18" cy="19" r="1.7"/></g></svg></span><span>keypad</span></div></div>
 <div class="hangup" aria-label="End call icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13.5c5.4-4.1 12.6-4.1 18 0l-2.4 4.3c-.35.58-.95.75-1.62.42l-2.75-1.28v-2.1a17 17 0 00-4.46 0v2.1l-2.75 1.28c-.65.3-1.27.14-1.62-.42L3 13.5z" fill="currentColor"/></svg></div><div class="home-indicator" aria-hidden="true"></div>
 </div></div></div><div class="content"><div class="eyebrow">A PRIVATE EXPERIENCE FOR ICARDS KUWAIT</div><h1 class="headline">Meet <span>Fahad.</span></h1><p class="subtitle">iCards’ AI customer service agent, powered by TroviAI.<br>Watch a real interaction, then try it yourself.</p><div class="actions"><button class="btn btn-gold" id="watchBtn">▶ &nbsp; Watch the Demo</button><button class="btn btn-outline" id="callBtn">☎ &nbsp; Call Fahad Live</button></div><div class="reminder" id="reminder" role="dialog" aria-label="Watch the demo first"><button class="close" id="closeReminder" aria-label="Dismiss reminder">×</button><div class="reminder-row"><div class="reminder-icon">▷</div><div><h2>Watch the demo first.</h2><p>To get the full experience, we recommend watching Fahad in action (≈ 76 seconds).</p></div></div><button class="btn btn-gold" id="reminderWatch">▶ &nbsp; Watch the Demo</button></div></div></main></div></section>
-<div class="video-modal" id="videoModal" hidden><div class="video-dialog" role="dialog" aria-modal="true" aria-label="Watch Fahad demo"><button class="video-close" id="closeVideo" aria-label="Close video">×</button><h2>Meet Fahad — In Action</h2><video id="demoVideo" controls playsinline preload="metadata"><source src="./Trovi_AI_Fahad_Correct_Arabic.mp4" type="video/mp4">Your browser does not support this video.</video></div></div>
+<div class="video-modal" id="videoModal" hidden><div class="video-dialog" role="dialog" aria-modal="true" aria-label="Watch Fahad demo"><button class="video-close" id="closeVideo" aria-label="Close video">×</button><h2>Meet Fahad — In Action</h2><video id="demoVideo" controls playsinline webkit-playsinline preload="metadata" poster="./fahad-portrait-hq.webp"><source src="./Trovi_AI_Fahad_Correct_Arabic.mp4" type="video/mp4">Your browser does not support this video.</video><div class="video-recovery" id="videoRecovery" hidden><p>Having trouble playing the demo?</p><a href="./Trovi_AI_Fahad_Correct_Arabic.mp4" target="_blank" rel="noopener">Open video directly</a></div></div></div>
 <div class="voice-overlay" id="voiceOverlay" hidden>
  <div class="voice-dialog" role="dialog" aria-modal="true" aria-label="Talk to Fahad live">
   <button type="button" class="voice-close" id="voiceClose" aria-label="Close conversation">×</button>
@@ -150,8 +151,9 @@ const video=document.getElementById('demoVideo'), modal=document.getElementById(
 let watched=sessionStorage.getItem('icards-watched')==='yes';
 function markReminderSeen(){try{localStorage.setItem('icards-reminder-seen','yes')}catch(e){}}
 function reminderSeen(){try{return localStorage.getItem('icards-reminder-seen')==='yes'}catch(e){return false}}
-function openVideo(){reminder.classList.remove('show');modal.hidden=false;video.currentTime=0;video.play().catch(()=>{})}
-function closeVideo(){modal.hidden=true;video.pause()}
+function openVideo(){reminder.classList.remove('show');modal.hidden=false;video.load();video.currentTime=0;video.play().catch(()=>{video.setAttribute('controls','');})}
+function closeVideo(){modal.hidden=true;video.pause();document.getElementById("videoRecovery").hidden=true}
+video.addEventListener("error",()=>{document.getElementById("videoRecovery").hidden=false})
 document.getElementById('watchBtn').onclick=openVideo;document.getElementById('reminderWatch').onclick=()=>{markReminderSeen();openVideo()};document.getElementById('closeReminder').onclick=()=>{markReminderSeen();reminder.classList.remove('show')};
 document.getElementById('closeVideo').onclick=closeVideo;modal.addEventListener('click',e=>{if(e.target===modal)closeVideo()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeVideo();if(reminder.classList.contains('show')){markReminderSeen();reminder.classList.remove('show')}}});
 video.addEventListener('ended',()=>{watched=true;sessionStorage.setItem('icards-watched','yes');markReminderSeen();closeVideo()});
@@ -237,76 +239,7 @@ window.addEventListener('pagehide',()=>{if(voiceSession)voiceSession.endSession(
 
 
 
-// Progressive high-resolution portrait: capture a real full-resolution frame from
-// Fahad's corrected Arabic video on the visitor's own device. The embedded still
-// remains as a fallback until the frame has been successfully decoded.
-let fahadPortraitReady=false;
-let fahadPortraitStarted=false;
-function upgradeFahadPortrait(){
-  if(fahadPortraitReady || fahadPortraitStarted) return;
-  const portrait=document.querySelector('.avatar .fahad-portrait');
-  if(!portrait) return;
-  fahadPortraitStarted=true;
-  const source=document.createElement('video');
-  source.muted=true;source.defaultMuted=true;source.playsInline=true;
-  source.setAttribute('muted','');source.setAttribute('playsinline','');
-  source.setAttribute('webkit-playsinline','');
-  source.preload='auto';
-  source.src='./Trovi_AI_Fahad_Correct_Arabic.mp4';
-  source.setAttribute('aria-hidden','true');
-  source.style.cssText='position:absolute;inset:0;width:100%;height:100%;opacity:.01;pointer-events:none;';
-  portrait.parentNode.insertBefore(source,portrait);
-  let captured=false;
-  const capture=()=>{
-    if(captured||source.readyState<2||!source.videoWidth||!source.videoHeight)return;
-    try{
-      const canvas=document.createElement('canvas');canvas.width=520;canvas.height=520;
-      const ctx=canvas.getContext('2d',{alpha:false});
-      if(!ctx)return;
-      // Original is 512 x 910. The native neon portrait ring fills these coordinates.
-      // Crop at source resolution; no AI enhancement, stretching, or facial edits.
-      const scale=source.videoWidth/512;
-      ctx.drawImage(source,48*scale,82*scale,416*scale,416*scale,0,0,520,520);
-      const frame=canvas.toDataURL('image/webp',.94);
-      if(frame.length<3000)return;
-      captured=true;
-      portrait.src=frame;
-      const voicePhoto=document.getElementById('voicePortrait');
-      if(voicePhoto)voicePhoto.src=frame;
-      fahadPortraitReady=true;
-      source.pause();source.remove();
-    }catch(e){
-      // The fallback thumbnail stays visible if canvas decoding is unavailable.
-    }
-  };
-  source.addEventListener('loadeddata',()=>{requestAnimationFrame(capture);},{once:true});
-  source.addEventListener('timeupdate',capture);
-  source.addEventListener('playing',()=>{requestAnimationFrame(capture);},{once:true});
-  if('requestVideoFrameCallback' in source){source.requestVideoFrameCallback(()=>capture());}
-  source.addEventListener('error',()=>{source.remove();fahadPortraitStarted=false;},{once:true});
-  const start=()=>source.play().catch(()=>{});
-  start();
-  document.addEventListener('pointerdown',()=>{if(!captured&&!source.ended)start();},{once:true});
-  // Also capture when the visitor watches the full video on a restrictive browser.
-  const mainVideo=document.getElementById('demoVideo');
-  if(mainVideo)mainVideo.addEventListener('loadeddata',()=>{
-    if(captured)return;
-    try{
-      const canvas=document.createElement('canvas');canvas.width=520;canvas.height=520;
-      const ctx=canvas.getContext('2d',{alpha:false});
-      if(!ctx||mainVideo.readyState<2)return;
-      const scale=mainVideo.videoWidth/512;
-      ctx.drawImage(mainVideo,48*scale,82*scale,416*scale,416*scale,0,0,520,520);
-      portrait.src=canvas.toDataURL('image/webp',.94);
-      const voicePhoto=document.getElementById('voicePortrait');
-      if(voicePhoto)voicePhoto.src=portrait.src;
-      captured=true;fahadPortraitReady=true;source.pause();source.remove();
-    }catch(_){}
-  },{once:true});
-}
-if(sessionStorage.getItem('icards-access')==='yes')upgradeFahadPortrait();
-const formForPortrait=document.getElementById('gateForm');
-if(formForPortrait)formForPortrait.addEventListener('submit',()=>{if(sessionStorage.getItem('icards-access')==='yes')upgradeFahadPortrait()});
+// Fahad uses a static, high-resolution portrait to avoid loading a second video.
 
 })();
 </script></body></html>
