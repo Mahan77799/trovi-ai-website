@@ -236,6 +236,77 @@ voiceMute.onclick=()=>{
 window.addEventListener('pagehide',()=>{if(voiceSession)voiceSession.endSession().catch(()=>{})});
 
 
-// Avatar uses a still frame to remain visible without video decoding on iOS/Android.
+
+// Progressive high-resolution portrait: capture a real full-resolution frame from
+// Fahad's corrected Arabic video on the visitor's own device. The embedded still
+// remains as a fallback until the frame has been successfully decoded.
+let fahadPortraitReady=false;
+let fahadPortraitStarted=false;
+function upgradeFahadPortrait(){
+  if(fahadPortraitReady || fahadPortraitStarted) return;
+  const portrait=document.querySelector('.avatar .fahad-portrait');
+  if(!portrait) return;
+  fahadPortraitStarted=true;
+  const source=document.createElement('video');
+  source.muted=true;source.defaultMuted=true;source.playsInline=true;
+  source.setAttribute('muted','');source.setAttribute('playsinline','');
+  source.setAttribute('webkit-playsinline','');
+  source.preload='auto';
+  source.src='./Trovi_AI_Fahad_Correct_Arabic.mp4';
+  source.setAttribute('aria-hidden','true');
+  source.style.cssText='position:absolute;inset:0;width:100%;height:100%;opacity:.01;pointer-events:none;';
+  portrait.parentNode.insertBefore(source,portrait);
+  let captured=false;
+  const capture=()=>{
+    if(captured||source.readyState<2||!source.videoWidth||!source.videoHeight)return;
+    try{
+      const canvas=document.createElement('canvas');canvas.width=520;canvas.height=520;
+      const ctx=canvas.getContext('2d',{alpha:false});
+      if(!ctx)return;
+      // Original is 512 x 910. The native neon portrait ring fills these coordinates.
+      // Crop at source resolution; no AI enhancement, stretching, or facial edits.
+      const scale=source.videoWidth/512;
+      ctx.drawImage(source,48*scale,82*scale,416*scale,416*scale,0,0,520,520);
+      const frame=canvas.toDataURL('image/webp',.94);
+      if(frame.length<3000)return;
+      captured=true;
+      portrait.src=frame;
+      const voicePhoto=document.getElementById('voicePortrait');
+      if(voicePhoto)voicePhoto.src=frame;
+      fahadPortraitReady=true;
+      source.pause();source.remove();
+    }catch(e){
+      // The fallback thumbnail stays visible if canvas decoding is unavailable.
+    }
+  };
+  source.addEventListener('loadeddata',()=>{requestAnimationFrame(capture);},{once:true});
+  source.addEventListener('timeupdate',capture);
+  source.addEventListener('playing',()=>{requestAnimationFrame(capture);},{once:true});
+  if('requestVideoFrameCallback' in source){source.requestVideoFrameCallback(()=>capture());}
+  source.addEventListener('error',()=>{source.remove();fahadPortraitStarted=false;},{once:true});
+  const start=()=>source.play().catch(()=>{});
+  start();
+  document.addEventListener('pointerdown',()=>{if(!captured&&!source.ended)start();},{once:true});
+  // Also capture when the visitor watches the full video on a restrictive browser.
+  const mainVideo=document.getElementById('demoVideo');
+  if(mainVideo)mainVideo.addEventListener('loadeddata',()=>{
+    if(captured)return;
+    try{
+      const canvas=document.createElement('canvas');canvas.width=520;canvas.height=520;
+      const ctx=canvas.getContext('2d',{alpha:false});
+      if(!ctx||mainVideo.readyState<2)return;
+      const scale=mainVideo.videoWidth/512;
+      ctx.drawImage(mainVideo,48*scale,82*scale,416*scale,416*scale,0,0,520,520);
+      portrait.src=canvas.toDataURL('image/webp',.94);
+      const voicePhoto=document.getElementById('voicePortrait');
+      if(voicePhoto)voicePhoto.src=portrait.src;
+      captured=true;fahadPortraitReady=true;source.pause();source.remove();
+    }catch(_){}
+  },{once:true});
+}
+if(sessionStorage.getItem('icards-access')==='yes')upgradeFahadPortrait();
+const formForPortrait=document.getElementById('gateForm');
+if(formForPortrait)formForPortrait.addEventListener('submit',()=>{if(sessionStorage.getItem('icards-access')==='yes')upgradeFahadPortrait()});
+
 })();
 </script></body></html>
