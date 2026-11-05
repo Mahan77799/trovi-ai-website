@@ -1,0 +1,38 @@
+name: Repair iCards demo MP4 for Safari
+on:
+  push:
+    branches: [fix/icards-iphone-video-playback]
+    paths:
+      - '.github/workflows/repair-icards-video.yml'
+permissions:
+  contents: write
+jobs:
+  remux:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9 # v4.2.2
+        with:
+          persist-credentials: true
+      - name: Rewrap original iCards video as streaming-friendly MP4 without re-encoding
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="trovi-restaurant-final-11/icards/Trovi_AI_Fahad_Correct_Arabic.mp4"
+          ffmpeg -v error -nostdin -y -i "$src" -map 0 -c copy -movflags +faststart -brand mp42 "${src%.mp4}.fixed.mp4"
+          mv "${src%.mp4}.fixed.mp4" "$src"
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path("trovi-restaurant-final-11/icards/Trovi_AI_Fahad_Correct_Arabic.mp4")
+          b=p.read_bytes()
+          assert b[4:8]==b"ftyp"
+          assert b[8:12]==b"mp42", "MP4 container not fixed"
+          assert b.find(b"moov")<b.find(b"mdat"), "Streaming metadata not at front"
+          print("Validated streaming MP4",len(b),"bytes")
+          PY
+      - name: Commit repaired video to feature branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add trovi-restaurant-final-11/icards/Trovi_AI_Fahad_Correct_Arabic.mp4
+          git diff --cached --quiet || (git commit -m "Fix iCards mobile video container for Safari" && git push)
