@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#030813">
+  <meta name="description" content="An invitation-only Trovi AI experience prepared for iCards Kuwait.">
+  <title>Meet Fahad | Trovi AI × iCards Kuwait</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#030813;--panel:#0a1426;--panel2:#101d31;--gold:#e2b65b;--muted:#aebcd2;--line:rgba(220,232,255,.14)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;background:radial-gradient(ellipse 70% 35% at 50% 3%,rgba(48,86,157,.24),transparent 75%),radial-gradient(ellipse 55% 45% at 100% 60%,rgba(218,162,66,.06),transparent 75%),var(--bg);color:#f7f9ff;font:400 16px/1.5 Figtree,system-ui,sans-serif}
+    button,a{font:inherit}a{color:inherit}
+    .shell{max-width:1120px;margin:auto;padding:0 24px}
+    header{border-bottom:1px solid var(--line);background:rgba(3,8,19,.8);backdrop-filter:blur(14px)}
+    .header-inner{min-height:83px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:13px;text-decoration:none}
+    .brand img{display:block;width:140px;max-width:38vw;height:auto;max-height:42px;object-fit:contain}
+    .brand-fallback{font-size:21px;letter-spacing:.16em;font-weight:800;display:none}
+    .private{font-size:11px;letter-spacing:.16em;color:var(--gold);text-align:right;font-weight:700}
+    .hero{text-align:center;padding:76px 0 43px}
+    .eyebrow{color:var(--gold);font-size:11px;letter-spacing:.22em;font-weight:800;text-transform:uppercase}
+    h1{font-size:clamp(48px,8vw,94px);letter-spacing:-.07em;line-height:1.05;margin:17px 0}
+    .hero p{max-width:620px;margin:0 auto;color:var(--muted);font-size:clamp(16px,2.5vw,20px);line-height:1.65}
+    .steps{display:flex;align-items:center;justify-content:center;gap:14px;margin:35px 0 0}
+    .step{font-size:12px;font-weight:700;letter-spacing:.02em;color:#d9e1ef}
+    .step b{display:inline-grid;place-items:center;width:25px;height:25px;border:1px solid rgba(226,182,91,.6);border-radius:50%;color:var(--gold);margin-right:8px}
+    .step.is-locked{opacity:.48}
+    .step-line{width:36px;height:1px;background:rgba(226,182,91,.45)}
+    .experience{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:22px;padding-bottom:95px}
+    .panel{border:1px solid var(--line);border-radius:23px;background:linear-gradient(155deg,rgba(20,35,57,.88),rgba(6,13,26,.96));box-shadow:0 20px 70px rgba(0,0,0,.23);overflow:hidden}
+    .panel-inner{padding:26px}
+    .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+    .kicker{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:800}
+    .duration{font-size:12px;color:var(--muted)}
+    h2{font-size:clamp(24px,3vw,31px);letter-spacing:-.035em;line-height:1.15;margin:8px 0 12px}
+    .support{color:var(--muted);font-size:14px;line-height:1.7;margin:0}
+    .video-wrap{position:relative;min-height:300px;display:flex;justify-content:center;align-items:center;padding:20px;background:radial-gradient(circle at center,rgba(73,111,178,.2),transparent 60%),#040914}
+    video{width:min(100%,295px);aspect-ratio:9/16;max-height:530px;object-fit:contain;background:#070d18;border-radius:14px;box-shadow:0 16px 60px rgba(0,0,0,.45)}
+    .video-unavailable{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:35px;background:rgba(5,11,23,.95);color:var(--muted);font-size:14px}
+    .video-unavailable.is-visible{display:flex}
+    .progress-row{display:flex;justify-content:space-between;gap:8px;margin:17px 0 9px;color:var(--muted);font-size:12px}
+    .track{height:5px;border-radius:100px;background:#263349;overflow:hidden}
+    .fill{height:100%;width:0;background:linear-gradient(90deg,#a8772e,#f4d58a);transition:width .18s linear}
+    .tip{margin:12px 0 0;color:#94a7c3;font-size:12px}
+    .call-panel{display:flex;flex-direction:column;min-height:100%}
+    .orb{width:94px;height:94px;border-radius:50%;margin:27px auto 23px;background:radial-gradient(circle at 31% 24%,#f9e7b8,#e3ac4b 17%,#244f91 45%,#0d1a3a 70%,#02060f 100%);box-shadow:0 0 45px rgba(99,145,230,.23),inset -10px -12px 26px rgba(0,0,0,.45)}
+    .call-content{text-align:center;flex:1}
+    .lock-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;background:rgba(226,182,91,.1);color:var(--gold);font-size:22px}
+    .call-content h2{font-size:clamp(28px,3.8vw,39px)}
+    .cta{display:flex;justify-content:center;align-items:center;gap:10px;min-height:54px;width:100%;border-radius:12px;border:0;text-decoration:none;font-weight:800;font-size:15px;margin:26px 0 12px;background:linear-gradient(110deg,#e9c47d,#c99b45);color:#09111f;transition:transform .2s,filter .2s}
+    .cta:hover{transform:translateY(-1px);filter:brightness(1.07)}
+    .cta[aria-disabled="true"]{background:#29354a;color:#9faec4;cursor:not-allowed;pointer-events:none}
+    .phone-number{color:var(--gold);font-size:13px;display:none;margin:0 0 8px}
+    .challenge{margin-top:25px;text-align:left;border-top:1px solid var(--line);padding-top:23px}
+    .challenge h3{font-size:14px;margin:0 0 13px}
+    .challenge ul{list-style:none;padding:0;margin:0}
+    .challenge li{display:flex;gap:10px;margin:12px 0;color:#b7c5d9;font-size:13px}
+    .challenge li span{color:var(--gold);font-weight:800}
+    .locked .challenge{opacity:.48}
+    .unlock-banner{display:none;background:rgba(226,182,91,.09);border:1px solid rgba(226,182,91,.32);border-radius:12px;padding:14px;margin:14px 0 0;color:#f1d8a5;font-size:13px}
+    .unlocked .unlock-banner{display:block}
+    .footer{border-top:1px solid var(--line);padding:22px 0 35px;color:#8295b1;text-align:center;font-size:12px}
+    @media(max-width:780px){.hero{padding:58px 0 32px}.experience{grid-template-columns:1fr;gap:17px;padding-bottom:56px}.panel-inner{padding:23px}.video-wrap{min-height:280px}.private{font-size:9px}.steps{gap:8px}.step{font-size:11px}.step-line{width:20px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header><div class="shell header-inner">
+    <div class="brand" aria-label="Trovi AI"><img src="../assets/branding/trovi-ai-logo-white.png" alt="Trovi AI" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="brand-fallback">TROVI AI</span></div>
+    <span class="private">PRIVATE EXPERIENCE<br>ICARDS KUWAIT</span>
+  </div></header>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">A private preview, prepared for iCards Kuwait</div>
+      <h1>Meet Fahad<span style="color:var(--gold)">.</span></h1>
+      <p>Meet the voice behind the next generation of customer service. First, see Fahad in action. Then put him to the test yourself.</p>
+      <div class="steps" aria-label="Demo steps">
+        <span class="step"><b>1</b>Watch the demo</span><span class="step-line"></span>
+        <span class="step is-locked" id="step2"><b>2</b>Call Fahad live</span>
+      </div>
+    </section>
+    <section class="experience" aria-label="Trovi AI private demo experience">
+      <article class="panel">
+        <div class="panel-inner">
+          <div class="section-head"><span class="kicker">01 / Watch</span><span class="duration">Approx. 76 seconds</span></div>
+          <h2>Watch Fahad in action.</h2>
+          <p class="support">A real-world customer service scenario, handled in natural Kuwaiti Arabic. Watch the full conversation to unlock your live experience.</p>
+        </div>
+        <div class="video-wrap">
+          <video id="demoVideo" controls playsinline preload="metadata" controlsList="nodownload noplaybackrate" disablePictureInPicture aria-label="Fahad demo video">
+            <source src="./fahad-demo.mp4" type="video/mp4">
+            Your browser does not support MP4 video.
+          </video>
+          <div id="videoUnavailable" class="video-unavailable" role="status">The Fahad demo video is being connected to this private preview. The call experience will unlock when the video is ready and watched in full.</div>
+        </div>
+        <div class="panel-inner">
+          <div class="progress-row"><span id="progressText">Watch to unlock your call</span><span id="progressPercent">0%</span></div>
+          <div class="track" role="progressbar" aria-label="Video watch progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar"><div class="fill" id="progressFill"></div></div>
+          <p class="tip">You can pause and resume anytime. The live call unlocks after the full video plays.</p>
+        </div>
+      </article>
+      <article class="panel call-panel locked" id="callPanel">
+        <div class="panel-inner call-content">
+          <div class="section-head"><span class="kicker">02 / Experience</span><span class="duration" id="statusLabel">Locked</span></div>
+          <div class="orb" aria-hidden="true"></div>
+          <div class="lock-icon" id="lockIcon" aria-hidden="true">🔒</div>
+          <h2 id="callTitle">Your turn is next.</h2>
+          <p class="support" id="callDescription">Finish watching the demo to unlock a live conversation with Fahad. Speak naturally, interrupt him, or change your mind.</p>
+          <div class="unlock-banner" id="unlockBanner" role="status">Demo complete. Fahad is ready for your call.</div>
+          <a id="callButton" class="cta" aria-disabled="true" tabindex="-1" href="#" aria-label="Call Fahad, currently locked">🔒 &nbsp; Complete the video to unlock</a>
+          <p class="phone-number" id="phoneNumber"></p>
+          <p class="tip" id="callTip">Available once the video ends.</p>
+          <div class="challenge">
+            <h3>When you call, challenge Fahad.</h3>
+            <ul>
+              <li><span>01</span> Ask for an iTunes card, then change to Roblox.</li>
+              <li><span>02</span> Ask about a gift card that isn't working.</li>
+              <li><span>03</span> Speak casually in Kuwaiti Arabic and interrupt him.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer class="footer">TROVI AI &nbsp;·&nbsp; Prepared exclusively for iCards Kuwait &nbsp;·&nbsp; Private demonstration</footer>
+  <script>
+    (() => {
+      'use strict';
+      // Set this to Fahad's real demo number before launch, in international format.
+      const DEMO_PHONE = '';
+      const video = document.getElementById('demoVideo');
+      const panel = document.getElementById('callPanel');
+      const button = document.getElementById('callButton');
+      const bar = document.getElementById('progressBar');
+      const fill = document.getElementById('progressFill');
+      const percent = document.getElementById('progressPercent');
+      const label = document.getElementById('progressText');
+      const status = document.getElementById('statusLabel');
+      const unavailable = document.getElementById('videoUnavailable');
+      let furthestWatched = 0;
+      let unlocked = false;
+      let lastTime = 0;
+      let lastClock = 0;
+      const tolerance = 1.3;
+
+      function showProgress() {
+        const duration = Number.isFinite(video.duration) ? video.duration : 0;
+        const pct = duration ? Math.min(100, Math.floor(furthestWatched / duration * 100)) : 0;
+        fill.style.width = pct + '%';
+        percent.textContent = pct + '%';
+        bar.setAttribute('aria-valuenow', String(pct));
+      }
+      video.addEventListener('timeupdate', () => {
+        if (unlocked || !Number.isFinite(video.currentTime)) return;
+        const now = performance.now();
+        const dt = (now - lastClock) / 1000;
+        const jump = video.currentTime - lastTime;
+        // Advance progress only through continuous playback, never through a seek.
+        if (!video.paused && !video.seeking && jump >= 0 && (lastClock === 0 || jump <= Math.max(1.5, dt * 2.5))) {
+          furthestWatched = Math.max(furthestWatched, video.currentTime);
+          showProgress();
+        }
+        lastTime = video.currentTime;
+        lastClock = now;
+      });
+      video.addEventListener('seeking', () => {
+        if (!unlocked && video.currentTime > furthestWatched + tolerance) {
+          video.currentTime = Math.max(0, furthestWatched);
+        }
+      });
+      video.addEventListener('ended', () => {
+        if (unlocked || !Number.isFinite(video.duration)) return;
+        if (furthestWatched < video.duration - 2) {
+          video.currentTime = Math.max(0, furthestWatched);
+          label.textContent = 'Continue watching to unlock';
+          return;
+        }
+        unlocked = true;
+        furthestWatched = video.duration;
+        showProgress();
+        panel.classList.remove('locked');
+        panel.classList.add('unlocked');
+        document.getElementById('step2').classList.remove('is-locked');
+        document.getElementById('lockIcon').textContent = '✓';
+        document.getElementById('callTitle').textContent = "Now it's your turn.";
+        document.getElementById('callDescription').textContent = "You've seen Fahad handle a conversation. Now forget the script. Ask him anything in Kuwaiti Arabic.";
+        status.textContent = 'Unlocked';
+        label.textContent = 'Demo completed';
+        document.getElementById('callTip').textContent = 'Your phone will open the dialer when you tap the button.';
+        const cleanPhone = DEMO_PHONE.replace(/[^+0-9]/g, '');
+        if (cleanPhone) {
+          button.href = 'tel:' + cleanPhone;
+          button.textContent = '☎  Call Fahad — Live Experience';
+          button.setAttribute('aria-disabled','false');
+          button.removeAttribute('tabindex');
+          button.setAttribute('aria-label','Call Fahad live');
+          const phoneLabel = document.getElementById('phoneNumber');
+          phoneLabel.textContent = DEMO_PHONE;
+          phoneLabel.style.display = 'block';
+        } else {
+          button.textContent = 'Live number will be connected soon';
+          document.getElementById('callTip').textContent = 'The live number has not yet been configured for this preview.';
+          document.getElementById('unlockBanner').textContent = 'Video complete. Live calling will be connected before delivery.';
+        }
+        panel.scrollIntoView({behavior:'smooth',block:'center'});
+      });
+      video.addEventListener('error', () => unavailable.classList.add('is-visible'));
+      video.addEventListener('loadedmetadata', () => unavailable.classList.remove('is-visible'));
+      button.addEventListener('click', event => {
+        if (button.getAttribute('aria-disabled') === 'true') event.preventDefault();
+      });
+    })();
+  </script>
+</body>
+</html>
