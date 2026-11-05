@@ -246,7 +246,10 @@ window.addEventListener('pagehide',()=>{if(voiceSession)voiceSession.endSession(
   const portrait=document.querySelector('.avatar .fahad-portrait');
   if(!portrait || !document.createElement('canvas').getContext)return;
   const v=document.createElement('video');
-  v.muted=true;v.playsInline=true;v.preload='metadata';
+  v.muted=true;v.playsInline=true;v.autoplay=true;v.preload='auto';
+  v.setAttribute('webkit-playsinline','');
+  v.style.cssText='position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;left:-100px;top:-100px';
+  document.body.appendChild(v);
   v.src='./fahad-demo.mp4';
   let updated=false;
   const capture=()=>{
@@ -269,14 +272,14 @@ window.addEventListener('pagehide',()=>{if(voiceSession)voiceSession.endSession(
         updated=true;
       }
     }catch(_) {/* Preserve the embedded still on unsupported mobile devices. */}
-    if(updated){try{v.pause();v.removeAttribute('src');v.load()}catch(_){}}
+    if(updated){try{v.pause();v.removeAttribute('src');v.remove();v.load()}catch(_){}}
   };
   v.addEventListener('loadedmetadata',()=>{
-    try{v.currentTime=0.05}catch(_){}
+    try{v.currentTime=0.05;v.play().catch(()=>{})}catch(_){}
   },{once:true});
   v.addEventListener('seeked',capture);
   v.addEventListener('loadeddata',capture);
-  v.addEventListener('error',()=>{try{v.removeAttribute('src')}catch(_){}},{once:true});
+  v.addEventListener('error',()=>{try{v.removeAttribute('src');v.remove()}catch(_){}},{once:true});
 })();
 
 })();
